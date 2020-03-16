@@ -148,7 +148,7 @@
 
 <p>The following walk-through illustrates how to locally install, configure, and run an
     OAuth 1.0a for MyProxy <a href="../../client/index.html" target="_blank">client</a> and
-    <a href="../index.xhtml" target="_blank">server</a> as a regular system user.
+    <a href="../index.html" target="_blank">server</a> as a regular system user.
     This not how to set it up in a production system or even a standard Tomcat installation.
     Pay especial attention to the environment variables. You must set them each time manually
     before you run the client and server.
@@ -203,7 +203,7 @@ $ keytool -importcert -v -trustcacerts -alias tomcat -file tomcat.cer -keystore 
 $ export CATALINA_OPTS=&quot;-Djavax.net.ssl.trustStore=$HOME/oa4mp/cacerts.jks&quot; # trust our self-signed certificate
 $ vi $CATALINA_BASE/conf/server.xml # uncomment the &quot;SSL HTTP/1.1 Connector&quot; entry</pre></div>
 
-<p>Next enable Tomcat <a href="server/configuration/server-email.xhtml" target="_blank" title="OAuth for MyProxy: Email Notifications">email support</a>:
+<p>Next enable Tomcat <a href="../configuration/server-email.html" target="_blank" title="OAuth for MyProxy: Email Notifications">email support</a>:
 
 </p>
 
@@ -225,7 +225,7 @@ $ tail -2 $CATALINA_HOME/conf/context.xml
 <h3><a name="MyProxy"></a>MyProxy</h3>
 
 
-<p>The OAuth for MyProxy server acts as a front-end to an existing <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy" target="_blank">MyProxy</a> server. The OAuth
+<p>The OAuth for MyProxy server acts as a front-end to an existing MyProxy server. The OAuth
     server can run on the same system as the MyProxy server or they can run on separate systems. To connect securely to
     the MyProxy server, the OAuth for MyProxy install must include a trusted CA certificates directory (in /etc/grid-security/certificates
     or $HOME/.globus/certificates). Since we're installing as a regular system user, we use the myproxy-get-trustroots
@@ -255,7 +255,7 @@ $ curl -sO http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oauth.war
 </pre></div>
 
 
-<p>Next, <a href="server/configuration/config-index.xhtml">configure the server</a>:</p>
+<p>Next, <a href="../configuration/config-index.html">configure the server</a>:</p>
 
 <div>
 <pre>$ vi $CATALINA_HOME/conf/web.xml # add oa4mp:server.config.file parameter
@@ -313,7 +313,7 @@ $ $CATALINA_HOME/bin/startup.sh # start up the server
 <h2><a name="Oauth1_Client_Setup"></a>Oauth1 Client Setup</h2>
 
 
-<p>Next, <a href="client/manuals/registering-with-a-server.xhtml">registering the client</a>. The
+<p>Next, <a href="../../client/manuals/registering-with-a-server.html">registering the client</a>. The
     first step is to generate the client keys:</p>
 
 <div>
@@ -330,7 +330,7 @@ $ chmod 0600 oauth-privkey.pk8
     &quot;Public Key&quot; field.</p>
 
 
-<p>Next, <a href="client/configuration/index.xhtml">configure the client</a>, entering
+<p>Next, <a href="../../client/configuration/index.html">configure the client</a>, entering
     the client ID value given as output from the client registration web form:</p>
 
 <div>
@@ -354,7 +354,7 @@ $ cat ~/oa4mp/client-cfg.xml
 &lt;/client&gt;
 &lt;/config&gt;
 </pre></div>
-Note that the last option for <a href="client/manuals/parameters.xhtml">showRedirectPage</a> will pause the
+Note that the last option for <a href="../../client/manuals/parameters.html">showRedirectPage</a> will pause the
 control immediately after
 the first call to the server and display a url for where the client would normally be redirected and
 the user's private key. This is good for testing but should not be used in production servers.
@@ -366,7 +366,7 @@ immediately.
 <h2><a name="Oauth1_Client_Approval"></a>Oauth1 Client Approval</h2>
 
 
-<p>Next we need to <a href="server/manuals/cli.xhtml">approve the client
+<p>Next we need to <a href="../manuals/cli.html">approve the client
     registration request with the command-line tool</a>:</p>
 
 <div>
@@ -429,7 +429,7 @@ $ curl -sO http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oauth2.war
 </pre></div>
 
 
-<p>Next, <a href="server/configuration/config-index.xhtml">configure the server</a>.
+<p>Next, <a href="../configuration/config-index.html">configure the server</a>.
     (Note: Oauth1 and Oauth2 need to use different directories for their filestores, because
     they use different file formats and different approver tools.)</p>
 
@@ -490,12 +490,12 @@ $ $CATALINA_HOME/bin/startup.sh # start up the server
 
 
 
-<p>Next, <a href="client/manuals/registering-with-an-oauth2-server.xhtml">registering the client</a>
+<p>Next, <a href="../../client/manuals/registering-with-an-oauth2-server.html">registering the client</a>
     You must submit the web form at <a class="externalLink" href="https://localhost:8443/oauth2/register">https://localhost:8443/oauth2/register</a>
     to register the client and get both a client ID and client secret.</p>
 
 
-<p>Next, <a href="client/configuration/index.xhtml">configure the client</a>.
+<p>Next, <a href="../../client/configuration/index.html">configure the client</a>.
     You must preserve botht he client ID and client secret in the configuration file.
     Note that the client secret is a single string. Do not add any line breaks or spaces
     and be aware that some browsers will add these when you copy the secret to the clipboard.
@@ -516,7 +516,7 @@ $ tail -5 $CATALINA_HOME/conf/web.xml
 &lt;/client&gt;
 &lt;/config&gt;
 </pre></div>
-Note that the last option for <a href="client/manuals/parameters.xhtml">showRedirectPage</a> will pause the
+Note that the last option for <a href="../../client/manuals/parameters.html">showRedirectPage</a> will pause the
 control immediately after
 the first call to the server and display a url for where the client would normally be redirected and
 the user's private key. This is good for testing but should not be used in production servers.
@@ -533,7 +533,7 @@ $ $CATALINA_HOME/bin/startup.sh
 <h2><a name="Oauth2.2FOIDC_Client_Approval"></a>Oauth2/OIDC Client Approval</h2>
 
 
-<p>Next we need to <a href="server/manuals/cli.xhtml">approve the client
+<p>Next we need to <a href="../manuals/cli.html">approve the client
     registration request with the command-line tool</a>:</p>
 
 <div>
@@ -601,7 +601,7 @@ need to configure the Tomcat SSL connector. Here is a sample:
 
 
 <p>For the client, you should simply add a keystore section to your client configuration (works with
-    all versions of OA4MP) as described <a href="common/configuration/keystore.xhtml">here</a>. This
+    all versions of OA4MP) as described <a href="../../common/configuration/keystore.html">here</a>. This
     is the platform independent way to make the client aware of a certificate.
 </p>
 

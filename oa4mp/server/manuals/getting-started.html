@@ -170,7 +170,7 @@
     
 <li>Some form of persistent storage. This may be a file system, MySQL or PostgreSQL.</li>
     
-<li>Java mail. This must be configured regardless if notifications are set. Read <a href="server/configuration/server-email.xhtml" title="OAuth for MyProxy: Email Notifications">here</a> for details.
+<li>Java mail. This must be configured regardless if notifications are set. Read <a href="../configuration/server-email.html" title="OAuth for MyProxy: Email Notifications">here</a> for details.
     </li>
     
 <li>Maven 3.0 or above (if building from the source)</li>
@@ -204,13 +204,13 @@
 <p>You may most easily a bare-bones version for testing by downloading the current reference war:</p>
 
 
-<p><a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oauth.war" title="OA4MP service war">oauth-server-latest.war</a>
+<p><a class="externalLink" href="https://github.com/ncsa/OA4MP/releases/latest/oauth.war" title="OA4MP service war">oauth-server-latest.war</a>
     <br /></br>
-    <a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oauth.war.asc" title="PGP signature">(PGP signature)</a>
+    <a class="externalLink" href="https://github.com/ncsa/OA4MP/releases/latest/oauth.war.asc" title="PGP signature">(PGP signature)</a>
 </p>
 
 
-<p>Download this, read to <a href="server/configuration/config-index.xhtml" title="Server Configuration Reference Manual">configure
+<p>Download this, read to <a href="../configuration/config-index.html" title="Server Configuration Reference Manual">configure
     the deployment</a>, and deploy it to Tomcat. The war, as delivered, cannot be run.You must do some minimal
     configuration at least before deploying it. </p>
 
@@ -292,7 +292,7 @@ and you should end up with a deployable war.
 
 
 <p>In order to use MySQL for persistent storage, you must run the supplied script,
-    <a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/mysql.sql" title="mysql.sql install script">mysql.sql</a>
+    <a class="externalLink" href="https://github.com/ncsa/OA4MP/releases/latest/mysql.sql" title="mysql.sql install script">mysql.sql</a>
     to create all of the tables and users before your first use.</p>
 
 <div>
@@ -308,7 +308,7 @@ and you should end up with a deployable war.
 <h3><a name="PostgreSQL"></a>PostgreSQL</h3>
 
 
-<p>Most Unix distros have this database installed by default. There is a specific script, <a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/pg.sql" title="PostGreSQL install script">pg.sql</a>, that will
+<p>Most Unix distros have this database installed by default. There is a specific script, <a class="externalLink" href="https://github.com/ncsa/OA4MP/releases/latest/pg.sql" title="PostGreSQL install script">pg.sql</a>, that will
     create all the tables. All you should need to do is set the passwords near the top of the file. Then you would need
     to log in to the command line psql tool as the user postgres (this is the super user) and from that prompt issue</p>
 

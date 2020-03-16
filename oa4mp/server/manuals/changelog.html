@@ -158,7 +158,7 @@
     for token revocation.</li>
     
 <li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/15">Github issue 15</a>: OA4MP may be turned in to an OIDC compliant
-        service by setting the <a href="server/dtd/server-dtd-service-tag.xhtml">OIDCEnabled flag</a></li>
+        service by setting the <a href="server/dtd/server-dtd-service-tag.html">OIDCEnabled flag</a></li>
     
 <li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/19">Github issue 19</a>:Added QDL support.</li>
     
@@ -487,7 +487,7 @@ commands. For SQL stores, there is also a new search function that allows for li
 
 
 <p>You must also create signing keys for OIDC. This is done with the
-    <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/server/configuration/signing.xhtml">command line tool</a></p>
+    <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/server/configuration/signing.html">command line tool</a></p>
 
 
 <p>Signing of ID tokens is now the default on the server. However, since older clients may not support this, the default
@@ -577,7 +577,7 @@ commands. For SQL stores, there is also a new search function that allows for li
     
 <li>OAUTH-215: default secret key length for new OIDC clients set to 512 bytes.</li>
     
-<li>Added new <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/server/manuals/test-client.xhtml">command line
+<li>Added new <a href="test-client.html">command line
         client</a> for testing purposes.
     </li>
 </ul>
@@ -892,7 +892,7 @@ commands. For SQL stores, there is also a new search function that allows for li
     </li>
     
 <li>OAUTH-94: Fix for passthrough of Shibboleth attributes.
-        A <a href="server/manuals/Username-transformations.xhtml">username transformation</a> interface has been
+        A <a href="Username-transformations.html">username transformation</a> interface has been
         created.
         This will be invoked immediately before the call to MyProxy.
         Users that wish to customize this may do so by implementing the interface and setting it in the environment
@@ -921,7 +921,7 @@ commands. For SQL stores, there is also a new search function that allows for li
 <li>Fixed bug OAUTH-90.</li>
     
 <li>Fixed bug OAUTH-94. This adds a configuration option to
-        <a href="server/configuration/authorization-header.xhtml">return the DN</a> of the user's cert as the username.
+        <a href="authorization-header.html">return the DN</a> of the user's cert as the username.
     </li>
     
 <li>All new command line tools that allow for managing clients and approvals.</li>

@@ -235,7 +235,7 @@
 <td>Standard DN's (Distinguished names) are comma separated. Some versions of Globus, however, require
             that these be slash delimited. Enabling this option will convert commas to slashes using Globus's
             own utility for doing this. This means that you must
-            <a href="server/manuals/getting-started.xhml">follow the installation instruction for JGlobus</a> to your Tomcat. Generally
+            <a href="../manuals/getting-started.xhml">follow the installation instruction for JGlobus</a> to your Tomcat. Generally
             this option should rarely, if ever, be needed, so don't just enable it unless you are sure
             you know what it does and need it.
         </td>
@@ -263,7 +263,7 @@ be shown to the user along with client information and the user will be prompted
 <h3><a name="Use_cases"></a>Use cases</h3>
 There are three main use cases which should be discussed in more depth. The particulars of how to configure
 and authorization module are best dealt with elsewhere and a discussion can be found
-<a href="../manuals/remote-user.xhtml">here</a>.
+<a href="../manuals/remote-user.html">here</a>.
 <section>
 <h4><a name="Using_the_OA4MP_authorization_module"></a>Using the OA4MP authorization module</h4>
 
@@ -306,7 +306,7 @@ and authorization module are best dealt with elsewhere and a discussion can be f
 
 <p>In this case the server must have some way of performing the client verification. You will need to write a webapp
     that completely takes over the functions at the authorize endpoint.
-    (found in the <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/apidocs/index.html">javadoc</a>)
+    (found in the <a href="../../apidocs/index.html">javadoc</a>)
     should then be deployed elsewhere and invoked by your webapp when it has the username and password (if needed).
     Note that it is up to you to keep access to this servlet safe. We normally suggest that access be restricted to
     localhost only, so that only your webapp has access to the AuthorizationServlet.
