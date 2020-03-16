@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OAuth for MyProxy</title>
+    <style type="text/css" media="all">
+        @import url("../../css/oa4mp-custom.css");
+        @import url("../../css/oa4mp-theme.css");
+        @import url("../../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../../css/print.css" type="text/css" media="print"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+<body class="composite">
+<div id="banner">
+                        <a href="http://www.ncsa.illinois.edu/" id="bannerLeft"  >
+        
+                                                                    <img src="../../css/images/ncsalogo_sm-2.gif" alt="NCSA"/>
+        
+                </a>
+                                    <a href="../" id="bannerRight"  >
+        
+                                                                    <img src="../../css/images/MyProxyWide.gif" alt="MyProxy"/>
+        
+                </a>
+                <div class="clear">
+        <hr/>
+    </div>
+</div>
+<div id="breadcrumbs">
+            
+    
+
+    
+        
+                        
+    
+        
+                    <div class="xleft">
+            Last Published: 2020-03-16
+                                </div>
+                <div class="xright">            
+    
+
+    
+        
+                        
+    
+        
+                         Version: 4.4-SNAPSHOT
+            </div>
+    <div class="clear">
+        <hr/>
+    </div>
+</div>
+<div id="leftColumn">
+    <div id="navcolumn">
+                
+    
+
+    
+        
+                        
+    
+        
+                               <h5>OAuth for MyProxy</h5>
+                        <ul>
+                    
+    <li class="none">
+                        <a href="../../server/index.html">Overview</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../server/index.html">Server</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../client/index.html">Client</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../apidocs/index.html">api docs</a>
+            </li>
+              </ul>
+                            <h5>Project Documentation</h5>
+                        <ul>
+                    
+                            
+                                        
+                                    
+                                    
+                                    
+                                    
+                                    
+                            
+            <li class="collapsed">
+                        <a href="../../project-info.html">Project Information</a>
+                        </li>
+              
+                            
+                                        
+                                    
+                                    
+                            
+            <li class="collapsed">
+                        <a href="../../project-reports.html">Project Reports</a>
+                        </li>
+              </ul>
+                                               <a href="http://maven.apache.org/" title="Built by Maven"
+           class="poweredBy">
+            <img class="poweredBy"
+                 alt="Built by Maven"
+                 src="http://maven.apache.org/images/logos/maven-feather.png"
+                 width="90"
+                 height="30"
+                 border="1"/>
+        </a>
+                           
+    
+
+    
+        
+                        
+    
+        
+        </div>
+</div>
+<div id="bodyColumn">
+    <div id="contentBox">
+        
+
+
+
+
+<h1>Registering a client with a server</h1>
+
+
+<p>Before you can delegate certificates using the OAuth 1.0a for MyProxy service,
+    you must register your OAuth for MyProxy client.
+    This requires that you generate a public and private key. You will supply the
+    registration page (normally located at https://whatever.the.server/oauth/register) with your public key and other
+    information.
+</p>
+
+<section>
+<h2><a name="Generating_public_and_private_key_pairs."></a>Generating public and private key pairs.</h2>
+
+
+<p>There are several ways to do this, but the easiest is with open ssl. You would issue:</p>
+
+<div>
+<pre>
+openssl genrsa -out oauth-privkey.pem 2048
+chmod 0600 oauth-privkey.pem
+openssl rsa -in oauth-privkey.pem -pubout -out oauth-pubkey.pem
+</pre></div>
+
+<p>You now have a private and public key pair, which are PEM format. (Privacy Enhanced Mail format is just a pair of
+    headers slapped around a base 64 representation of binary data and is the basic format for all of the keys in
+    this discussion. What goes between the headers inside the PEM format is very different though.) Using your
+    private key with Java require a little more work, since the generated RSA private key is not in a format Java
+    understands. OpenSSL&#x2019;s default is called PKCS #1, which looks like</p>
+
+<div>
+<pre>
+-----BEGIN RSA PRIVATE KEY-----
+stuff...
+-----END RSA PRIVATE KEY-----
+</pre></div>
+
+<p>The newer format for this (which is natively supported by Java) is PKCS #8 format. OpenSSL has a utility for
+    conversion and here is how to use it:</p>
+
+<div>
+<pre>openssl pkcs8 -topk8 -in oauth-privkey.pem -nocrypt -out oauth-privkey.pk8</pre></div>
+
+<p>The resulting file looks like</p>
+
+<div>
+<pre>
+-----BEGIN PRIVATE KEY-----
+other stuff...
+-----END PRIVATE KEY-----
+</pre></div>
+
+<p>You should set the group to be &quot;tomcat&quot; and set it to be only owner (root) and group readable:</p>
+
+<div>
+<pre>chmod 0640 oauth-privkey.pk8</pre></div>
+
+<p>The public key is in the X509 public key standard and looks like</p>
+
+<div>
+<pre>
+-----BEGIN PUBLIC KEY-----
+more stuff....
+-----END PUBLIC KEY-----
+</pre></div>
+</section><section>
+<h2><a name="Filling_out_the_registration_form"></a>Filling out the registration form</h2>
+
+
+<p>The default registration form looks like this:</p>
+
+
+<p><img src="client/images/oauth-register.png" alt="Registration Form Image" width="893" height="624" /></p>
+
+
+<p>The various fields are as follows:</p>
+
+<ul>
+    
+<li><b>Client Name</b>: A human readable name for the science gateway (OAuth for MyProxy client) that
+        you are registering. This will be displayed to users and should identify your site.
+    </li>
+    
+<li><b>Contact email</b>: An email address where a human being can be reached for support.</li>
+    
+<li><b>Home url</b>: The main address for your site. This will be displayed to users as part of the
+        authentication process.
+    </li>
+    
+<li><b>Error url</b>: A page on your site that provides support information for users in case of a
+        server error. If you have no error page, you can just reuse your home url.
+    </li>
+    
+<li><b>Public key</b>: The X509 standard encoded public key you generated above. Just cut and paste it
+        in.
+    </li>
+</ul>
+
+</section><section>
+<h2><a name="Using_your_keys"></a>Using your keys</h2>
+
+
+<p>The Client API will require your private key. The OA4MP server will require your public one. The Client API only
+    needs the native Java object</p>
+
+
+<p>java.security.PrivateKey</p>
+
+
+<p>There is a utility called edu.uiuc.ncsa.csd.security.KeyUtil which will read in various formats. Generally the
+    format is to|from PKCS 8 PEM, so to read in a PKCS 8 PEM format key from a file you&#x2019;d issue</p>
+
+<div>
+<pre>FileReader fr = new FileReader(&#x201c;/path/to/oauth-privkey.pk8&#x201d;);</pre></div>
+
+<div>
+<pre>PrivateKey pkey = KeyUtil.fromPKCS8PEM(fr);</pre></div>
+
+<p>Remember that this utility does not convert between formats generally (so, e.g., reading in a PKCS 1 format file
+    using fromPKCS8PEM will fail). You must use OpenSSL&#x2019;s utility to do that.</p>
+
+
+</section>
+
+    </div>
+</div>
+<div class="clear">
+    <hr/>
+</div>
+<div id="footer">
+    <div class="xright">&#169;    
+                    2020
+        
+                    
+    
+
+    
+        
+                        
+    
+        
+    </div>
+    <div class="clear">
+        <hr/>
+    </div>
+</div>
+</body>
+</html>
+

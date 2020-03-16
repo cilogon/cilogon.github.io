@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OAuth for MyProxy</title>
+    <style type="text/css" media="all">
+        @import url("../../css/oa4mp-custom.css");
+        @import url("../../css/oa4mp-theme.css");
+        @import url("../../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../../css/print.css" type="text/css" media="print"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+<body class="composite">
+<div id="banner">
+                        <a href="http://www.ncsa.illinois.edu/" id="bannerLeft"  >
+        
+                                                                    <img src="../../css/images/ncsalogo_sm-2.gif" alt="NCSA"/>
+        
+                </a>
+                                    <a href="../" id="bannerRight"  >
+        
+                                                                    <img src="../../css/images/MyProxyWide.gif" alt="MyProxy"/>
+        
+                </a>
+                <div class="clear">
+        <hr/>
+    </div>
+</div>
+<div id="breadcrumbs">
+            
+    
+
+    
+        
+                        
+    
+        
+                    <div class="xleft">
+            Last Published: 2020-03-16
+                                </div>
+                <div class="xright">            
+    
+
+    
+        
+                        
+    
+        
+                         Version: 4.4-SNAPSHOT
+            </div>
+    <div class="clear">
+        <hr/>
+    </div>
+</div>
+<div id="leftColumn">
+    <div id="navcolumn">
+                
+    
+
+    
+        
+                        
+    
+        
+                               <h5>OAuth for MyProxy</h5>
+                        <ul>
+                    
+    <li class="none">
+                        <a href="../../server/index.html">Overview</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../server/index.html">Server</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../client/index.html">Client</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../apidocs/index.html">api docs</a>
+            </li>
+              </ul>
+                            <h5>Project Documentation</h5>
+                        <ul>
+                    
+                            
+                                        
+                                    
+                                    
+                                    
+                                    
+                                    
+                            
+            <li class="collapsed">
+                        <a href="../../project-info.html">Project Information</a>
+                        </li>
+              
+                            
+                                        
+                                    
+                                    
+                            
+            <li class="collapsed">
+                        <a href="../../project-reports.html">Project Reports</a>
+                        </li>
+              </ul>
+                                               <a href="http://maven.apache.org/" title="Built by Maven"
+           class="poweredBy">
+            <img class="poweredBy"
+                 alt="Built by Maven"
+                 src="http://maven.apache.org/images/logos/maven-feather.png"
+                 width="90"
+                 height="30"
+                 border="1"/>
+        </a>
+                           
+    
+
+    
+        
+                        
+    
+        
+        </div>
+</div>
+<div id="bodyColumn">
+    <div id="contentBox">
+        
+
+
+
+
+<section>
+<h2><a name="The_Service_Tag."></a>The Service Tag.</h2>
+
+
+<p>This is the top-level tag for a server configuration. There may be several of these in a single configuration
+    file, all given different names.</p>
+
+<table class="bodyTable" style="text-align: left; width: 100%;" border="1" cellspacing="2" cellpadding="2">
+    <tbody>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">Attribute</td>
+        
+<td style="vertical-align: top;">Required?</td>
+        
+<td style="vertical-align: top;">Default</td>
+        
+<td style="vertical-align: top;">Description</td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">name</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">(none)</td>
+        
+<td style="vertical-align: top;">An arbitrary name for this configuration. Multiple configurations in a file are
+            supported.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">version</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">latest</td>
+        
+<td style="vertical-align: top;">The version of the configuration file. If omitted, the most current is used.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">address</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">N/A</td>
+        
+<td style="vertical-align: top;">The address associated with this service. Normally this is not needed unless
+            there is some aliasing used by the host.The host name is taken from the servlet itself and used in
+            constructing urls that point to this server. For instance, if there is a server farm with a given
+            external-facing address which will be resolved to one of the members based on load-balancing, this
+            would be the external-facing address.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">pollingDirectory</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">N/A</td>
+        
+<td style="vertical-align: top;">This enables polling for client approvals. The meaning of this is
+            that if there is a command line interface (CLI) which approves a client, a specific file is written
+            to this directory which will be read at intervals by the server, telling it that a new approval has been
+            written. This is because once a client configuration is loaded, it stays in memory. To disable this feature,
+            do not set this.  Note that the CLI should use the same configuration as the server.
+        </td>
+    </tr>
+    
+<tr class="b">
+           
+<td style="vertical-align: top;">OIDCEnabled</td>
+           
+<td style="vertical-align: top;">N</td>
+           
+<td style="vertical-align: top;">true</td>
+           
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
+               This toggles OIDC support for the service. If true, then required claims (such as sibject) will be
+               checked for and ID tokens will be generated. Also, any request that does not contain the scope of <b>openid</b>
+               will be rejected. Note that if false, the service is OAuth 2.0 compliant, but not OIDC compliant.
+           </td>
+       </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">pollingInterval</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">N/A</td>
+        
+<td style="vertical-align: top;">How frequently the polling directory will be accessed for new approvals.
+            Note that this is ignored if polling is not enabled.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">debug</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">&quot;warn&quot;</td>
+        
+<td style="vertical-align: top;">Enable debugging for this service. This will be written to the Tomcat logs and
+            might be rather verbose. Use it only if you need it. The levels supported are (in order of
+            increasin verbosity) &quot;off&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;, &quot;severe&quot;, &quot;trace&quot;. Setting debug to
+            &quot;trace&quot; will dump out virtually everything and give a running account of the operation of the
+            service. This may be very, very large.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">maxAllowedNewClientRequests</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">unlimited</td>
+        
+<td style="vertical-align: top;">In the registration client, this is the maximum number of pending
+            client requests that the server will permit. Requests received after this limit is met will
+            be rejected. This is to prevent denial of service attacks for thousands of client requests.
+            Since such requests are normally not too frequent, this number can realistically be set low
+            to 10 or 20 with no issue on a production system.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">refreshTokenLifetime</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">1296000</td>
+        
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
+            specific. This will set a global maximum on the server, in seconds, for how long a refresh token can
+            remain active from issuance. The default is 15 days.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">maxClientRefreshTokenLifetime</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">33696000</td>
+        
+<td style="vertical-align: top;">&quot;<span style="background-color: #ff6600;">OAuth 2</span>
+            specific. This will set a global maximum on the server, in seconds, for refresh tokens a client
+            may request at registration. The default is 13 months.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">refreshTokenEnabled</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">false</td>
+        
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
+            specific. This tells the server to issue refresh tokens. Setting this false means the server will
+            not issue them, nor will clients be allowed to specify them at registration. Setting the
+            value for the refreshTokenLifetime in the configuration will be ignored if the server
+            does not issue refresh tokens.
+        </td>
+    </tr>
+
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">clientSecretLength</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">64</td>
+        
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
+            specific. The server generates client secrets of this length in bytes, then displays them
+            to the client in Base64 encoding, which should be returned verbatim to the server. Note that
+            the returned secret is URL safe encoded as well.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">serverDN</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">(none)</td>
+        
+<td style="vertical-align: top;">A server DN applied to all MyProxy servers. This may also be applied
+            individually in the MyProxy element. Note especially that this only applies to MyProxy
+            servers and must be a valid Distinguished Name. Also, setting this in the tag for a myproxy
+            server over-rides the global setting. 
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">disableDefaultStores</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">false</td>
+        
+<td style="vertical-align: top;">The default server behavior is to default
+            to using a memory store if no other store is explicitly set. If set to true, this will make the server throw
+            an
+            exception if there is no store configured.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">pingable</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">true</td>
+        
+<td style="vertical-align: top;">Boolean value. If true, then contacting a server endpoint (HTTP GET) with an
+            argument of &quot;ping&quot;
+            will result in a response with HTTP return code of 204. If false, then an 500 exception will be thrown on
+            the server.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">enableTwoFactorSupport</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">false</td>
+        
+<td style="vertical-align: top;">Boolean value. If true, the support for two factor authentication is enabled.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">issuer</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">(none)</td>
+        
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span> specific.
+            The global default for the issuer. That is to say, this will be returned in the claims to the
+            client. Note that this may be overridden by an administrative client or the client itself.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">scheme</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">myproxy</td>
+        
+<td style="vertical-align: top;">This sets the scheme for all identifiers (such as client ids) that are
+            created by the system. The format of an identifier is <br />
+            scheme:specificPart:...<br />
+            the default (as of version 4.0 still) is myproxy:oa4mp,2012:... After this is a hierarchical
+            name for the component.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">schemeSpecificPart</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">oa4mp,2012</td>
+        
+<td style="vertical-align: top;">This sets the scheme specific part for the identifiers. Note that if this is
+            omitted then the default is used. If you wish to suppress this, set it equal to &quot;&quot;.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p>The <span style="font-weight: bold;">name</span> can be anything. The name of the configuration to use may be
+    specified in the deployment descriptor (web.xml) file. If there is a single configuration in the file, that will be
+    used. If there are multiple configurations and no name is specified, an exception is raised.</p>
+
+<section>
+<h3><a name="A_Note_on_using_Two_Factor_Authentication"></a>A Note on using Two Factor Authentication</h3>
+
+
+<p>Due to the way Two Factor works, this effectively allows you to get only a single certificate once.
+    Because Two Factor generates a one time password that is very short lived (typically only a minute or perhaps 2
+    at the most), it is possible to wait too long before logging in (done when getting the cert) and have this fail.
+    Also, as stated elsewhere and worth repeating that ever so often, Two Factor offers a challenge that requires you to
+    log on to the RSA self-service console (For the NCSA, this is located at <a class="externalLink" href="https://otp.ncsa.illinois.edu/">otp</a>)
+    and then exchange the next token. This is impossible to do within the delegation service, so if
+    Two Factor requires this, get certs will fail with an &quot;invalid password&quot; message until further notice.
+</p>
+
+</section><section>
+<h3><a name="Example_1."></a>Example 1.</h3>
+
+<div>
+<pre>
+&lt;config&gt;
+   &lt;service address=&quot;http://localhost/oauth&quot;&gt;
+      &lt;!-- more stuff --&gt;
+   &lt;/service&gt;
+&lt;/config&gt;
+</pre></div>
+
+<p>Specifies that the service is located on localhost. There is a single configuration and every default will be used,
+    including looking for a local MyProxy instance.</p>
+
+</section><section>
+<h3><a name="Example_2."></a>Example 2.</h3>
+
+<div>
+<pre>
+&lt;config&gt;
+   &lt;service address=&quot;https://chem.bigstate.edu/organic/oauth&quot;
+       name=&quot;organic&quot;
+       clientSecretLength=&quot;300&quot;
+       maxAllowedNewClientRequests=&quot;25&quot;
+       scheme=&quot;cern&quot;
+       schemeSpecificPart=&quot;&quot;&gt;
+       &lt;!-- more stuff --&gt;
+   &lt;/service&gt;
+   &lt;service address=&quot;https://chem.bigstate.edu/polymer/oauth&quot; name=&quot;polymer&quot;&gt;
+       &lt;!-- more stuff --&gt;
+   &lt;/service&gt;
+&lt;/config&gt;
+</pre></div>
+
+<p>This specifies that there are two delegation services on the given machine and that both configurations reside in
+    this file, <b>or</b> there are two possible configurations available for a single server. Note that in the
+    first one, the number of new client registration is limited to 25 unappproved ones and the client secret
+    is 300 bytes which translates into 400 characters when Base64 encoded. Also, there is some
+    network address translation going on, so that the address tag is explicitly given.</p>
+
+
+<p>This also specifies that the client identifiers are of the form </p>
+
+<div>
+<pre>cern:/client_id/...</pre></div>
+
+<p>where the scheme has been set to &quot;cern&quot; but the scheme specific part (SPP) is to be omitted. Note that if the
+    SPP were omitted, then the default would be used and the resulting id would be
+</p>
+
+<div>
+<pre>cern:oa4mp,2012:/client_id/....</pre></div>
+
+
+</section></section>
+
+    </div>
+</div>
+<div class="clear">
+    <hr/>
+</div>
+<div id="footer">
+    <div class="xright">&#169;    
+                    2020
+        
+                    
+    
+
+    
+        
+                        
+    
+        
+    </div>
+    <div class="clear">
+        <hr/>
+    </div>
+</div>
+</body>
+</html>
+

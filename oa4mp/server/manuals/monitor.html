@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OAuth for MyProxy</title>
+    <style type="text/css" media="all">
+        @import url("../../css/oa4mp-custom.css");
+        @import url("../../css/oa4mp-theme.css");
+        @import url("../../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../../css/print.css" type="text/css" media="print"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+<body class="composite">
+<div id="banner">
+                        <a href="http://www.ncsa.illinois.edu/" id="bannerLeft"  >
+        
+                                                                    <img src="../../css/images/ncsalogo_sm-2.gif" alt="NCSA"/>
+        
+                </a>
+                                    <a href="../" id="bannerRight"  >
+        
+                                                                    <img src="../../css/images/MyProxyWide.gif" alt="MyProxy"/>
+        
+                </a>
+                <div class="clear">
+        <hr/>
+    </div>
+</div>
+<div id="breadcrumbs">
+            
+    
+
+    
+        
+                        
+    
+        
+                    <div class="xleft">
+            Last Published: 2020-03-16
+                                </div>
+                <div class="xright">            
+    
+
+    
+        
+                        
+    
+        
+                         Version: 4.4-SNAPSHOT
+            </div>
+    <div class="clear">
+        <hr/>
+    </div>
+</div>
+<div id="leftColumn">
+    <div id="navcolumn">
+                
+    
+
+    
+        
+                        
+    
+        
+                               <h5>OAuth for MyProxy</h5>
+                        <ul>
+                    
+    <li class="none">
+                        <a href="../../server/index.html">Overview</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../server/index.html">Server</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../client/index.html">Client</a>
+            </li>
+              
+    <li class="none">
+                        <a href="../../apidocs/index.html">api docs</a>
+            </li>
+              </ul>
+                            <h5>Project Documentation</h5>
+                        <ul>
+                    
+                            
+                                        
+                                    
+                                    
+                                    
+                                    
+                                    
+                            
+            <li class="collapsed">
+                        <a href="../../project-info.html">Project Information</a>
+                        </li>
+              
+                            
+                                        
+                                    
+                                    
+                            
+            <li class="collapsed">
+                        <a href="../../project-reports.html">Project Reports</a>
+                        </li>
+              </ul>
+                                               <a href="http://maven.apache.org/" title="Built by Maven"
+           class="poweredBy">
+            <img class="poweredBy"
+                 alt="Built by Maven"
+                 src="http://maven.apache.org/images/logos/maven-feather.png"
+                 width="90"
+                 height="30"
+                 border="1"/>
+        </a>
+                           
+    
+
+    
+        
+                        
+    
+        
+        </div>
+</div>
+<div id="bodyColumn">
+    <div id="contentBox">
+        
+
+
+
+
+
+<p>
+    A monitor is simply a client which executes the initial call to an OA4MP server. This works solely
+    from the command line -- no web server is needed. This is exactly the analog of the ping command
+    in that it shows the server up and active. Since a full test of the lifecycle requires that the client
+    be able to accept callbacks i.e. be running a web server,
+    it is not possible to test more than the first call. The intent of the monitor is
+    not to show that everything about
+    <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/client/index.xhtml">configuring a client</a> still works.
+</p>
+
+
+<p>To get a functional monitor, you
+    get the <a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oa4mp-monitor.jar">oa4mp-monitor.jar</a>
+    and the
+    <a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oa4mp-monitor">oa4mp-monitor script</a>.
+    For  <span style="background-color: #ff6600;">OAuth 2.0</span> you would get
+    <a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oa2-monitor.jar">oa2-monitor.jar</a>
+    with the script at <a class="externalLink" href="http://svn.code.sf.net/p/cilogon/code/tags/latest/server/oa2-monitor">oa2-monitor</a>
+    The default setup is like any other <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/server/manuals/cli.xhtml">command
+        line tool</a>
+    with an identical directory layout and it will try to use the configuration found in the default location
+    of /opt/oa4mp/etc/admin-cfg.xml.
+</p>
+
+
+<p>
+    Steps to set up a monitor are
+
+    1. Register it with a server
+    <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/client/manuals/registering-with-a-server.xhtml">OAuth 1.0a based servers</a>
+    or, <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/client/manuals/registering-with-an-oauth2-server.xhtml">
+    <span style="background-color: #ff6600;">OAuth 2.0</span> based servers. </a>
+    be sure to follow any and all instructions in given since the two mehtods of registration are different.
+    <br /><br />
+    2. Write a configuration file. This should have
+    <a class="externalLink" href="http://grid.ncsa.illinois.edu/myproxy/oauth/server/configuration/server-email.xhtml">mail configured</a>.
+    A sample OAuth 1.0a configuration would be
+</p>
+
+<div>
+<pre>
+&lt;config&gt;
+   &lt;client name=&quot;my-monitor&quot;&gt;
+      &lt;id&gt;myproxy:oa4mp,2012:/your/id/goes/here&lt;/id&gt;
+      &lt;serviceUri&gt;http://your.server.org/oauth/&lt;/serviceUri&gt;
+      &lt;callbackUri&gt;https://your.server.org/client/ready&lt;/callbackUri&gt;
+      &lt;lifetime&gt;864000&lt;/lifetime&gt;
+      &lt;publicKeyFile&gt;/path/to/public-key.pem&lt;/publicKeyFile&gt;
+      &lt;privateKeyFile&gt;/path/to/private-key.pem&lt;/privateKeyFile&gt;
+      &lt;mail enabled=&quot;true&quot;
+            useSSL=&quot;true&quot;
+            username=&quot;your-username&quot;
+            password=&quot;your password&quot;
+            debug=&quot;false&quot;
+            server=&quot;your.mail.server&quot;
+            recipients=&quot;email-address.of.recipient&quot;&gt;
+         &lt;messageTemplate&gt;/path/to/monitor-message.template&lt;/messageTemplate&gt;
+         &lt;subjectTemplate&gt;/path/to/monitor-subject.template&lt;/subjectTemplate&gt;
+       &lt;/mail&gt;
+       &lt;logging
+            logFileName=&quot;/path/to/logs/oa4mp-monitor.xml&quot;
+            logName=&quot;oa4mp&quot;
+            logSize=&quot;100000&quot;
+            logFileCount=&quot;2&quot;
+            debug=&quot;true&quot;/&gt;
+   &lt;/client&gt;
+&lt;/config&gt;
+</pre></div>
+
+
+<p>
+    A quick comment about the callback: the server will not get far enough in the delegation request to
+    actually every use this, however, a url that
+    has https as its protocol is a requirement from the server. For <span style="background-color: #ff6600;">OAuth 2.0</span>
+    based servers, the callback supplied <b>must</b> match one of the ones given at registration time or the initial
+    request will be rejected.
+
+    3. Run it once from the command line to see if it works by using the oa4mp-monitor script.
+    <br /><br />
+    4. Setup a chron job or use monit or whatever tool you prefer to invoke oa4mp-server at some specific interval,
+    e.g. every 5 minutes. The monitor will send an email notification whenever an attempt to contact the server fails.
+</p>
+
+
+
+
+    </div>
+</div>
+<div class="clear">
+    <hr/>
+</div>
+<div id="footer">
+    <div class="xright">&#169;    
+                    2020
+        
+                    
+    
+
+    
+        
+                        
+    
+        
+    </div>
+    <div class="clear">
+        <hr/>
+    </div>
+</div>
+</body>
+</html>
+
