@@ -8,6 +8,7 @@ edu.uiuc.ncsa.qdl.config
 edu.uiuc.ncsa.qdl.exceptions
 edu.uiuc.ncsa.qdl.workspace
 edu.uiuc.ncsa.qdl.state
+edu.uiuc.ncsa.qdl.install
 edu.uiuc.ncsa.qdl.generated
 edu.uiuc.ncsa.qdl.extensions.example
 edu.uiuc.ncsa.qdl.extensions
