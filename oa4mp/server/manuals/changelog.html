@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2020-04-15
+            Last Published: 2020-04-23
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 4.4.0
+                         Version: 4.4.1
             </div>
     <div class="clear">
         <hr/>
@@ -145,8 +145,10 @@
 <p>Changes to the OA4MP server by version.</p>
 
 <section>
-<h2><a name="a4.4"></a>4.4.0</h2>
-    <p>Release date 2020-04-14.</p>
+<h2><a name="a4.4.1"></a>4.4.1</h2>
+
+<p>Release date 2020-04-23.</p>
+
 
 <ul>
     
@@ -180,57 +182,14 @@
     
 <li>CIL-649: Support pairwise id and subject id (in CILogon).</li>
     
-<li>CIL-666: Command Line Interface improvements.</li>
+<li>CIL-666: Command Line Interface improvements. Please see the <a href="cli.html">cli manual</a> for details.</li>
+    
+<li>CIL-695: issuing the rm command in the CLI should prompt.</li>
+    
+<li>CIL-693: Claim sources created via introspection need to have their state injected.</li>
 </ul>
-<section>
-<h3><a name="Command_Line_Interface_Enhancements"></a>Command Line Interface Enhancements</h3>
 
-<p>The command line improvements allow for specifying a single property of something and updating it. The syntax is</p>
-
-<div>
-<pre>
-    use X  // The component
-    update -key property_name id // you will be prompted for the value(s)
-
-    OR
-
-    update -key property_name -value new_value id
-</pre></div>
-
-
-<p>where X is a component (e.g. &quot;clients&quot;) and the key is a property name. In the first case, (no value specified)
-you will be prompted for the value (or values if multiple). In the second case, you may simply specify the value directly.
-In the case of multi-valied items (such as the callbacks for a client) you may also specify if you want to add a value
-to the current values or remove it, more fully</p>
-
-<div>
-<pre>
-    update [-add | -remove] -key property_name [-value new_value] id
-</pre></div>
-You may list the property names for the component X at any time using the list_keys command. Also, this ability extends to
-listing properties:
-
-<div>
-<pre>
-    ls -key callback_uri id
-</pre></div>
-or removing a single property:
-
-<div>
-<pre>
-    rm -key limited_proxies id
-</pre></div>
-
-<p>Finally, remember that --help is you friend so e.g.</p>
-
-<div>
-<pre>
-    update --help
-</pre></div>
-
-<p>will print out a lot of information and examples. Similarly for rm and ls. </p>
-
-</section></section><section>
+</section><section>
 <h2><a name="a4.3"></a>4.3</h2>
 
 <p>Release date 2019-11-20.</p>
