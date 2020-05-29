@@ -45,6 +45,8 @@ edu.uiuc.ncsa.security.util.cli
 edu.uiuc.ncsa.security.util.cli
 edu.uiuc.ncsa.security.util.cli
 edu.uiuc.ncsa.security.util.cli
+edu.uiuc.ncsa.security.util.cli
+edu.uiuc.ncsa.security.util.cli
 edu.uiuc.ncsa.security.util.functor.user_defined
 edu.uiuc.ncsa.security.util.functor
 edu.uiuc.ncsa.security.util.functor
@@ -193,6 +195,7 @@ edu.uiuc.ncsa.security.delegation.servlet
 edu.uiuc.ncsa.security.delegation.servlet
 edu.uiuc.ncsa.security.core
 edu.uiuc.ncsa.security.core
+edu.uiuc.ncsa.security.core.util
 edu.uiuc.ncsa.security.core.util
 edu.uiuc.ncsa.security.core.util
 edu.uiuc.ncsa.security.core.util
