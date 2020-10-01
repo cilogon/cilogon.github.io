@@ -33,6 +33,7 @@ edu.uiuc.ncsa.security.storage.sql.mariadb
 edu.uiuc.ncsa.security.storage.sql.mysql
 edu.uiuc.ncsa.security.storage.sql.postgres
 edu.uiuc.ncsa.security.util.cli
+edu.uiuc.ncsa.security.util.cli.json_edit
 edu.uiuc.ncsa.security.util.configuration
 edu.uiuc.ncsa.security.util.functor
 edu.uiuc.ncsa.security.util.functor.logic
@@ -49,6 +50,7 @@ edu.uiuc.ncsa.security.util.pkcs
 edu.uiuc.ncsa.security.util.python
 edu.uiuc.ncsa.security.util.scripting
 edu.uiuc.ncsa.security.util.ssl
+edu.uiuc.ncsa.security.util.terminal
 edu.uiuc.ncsa.security.util.testing
 javax.mail
 javax.mail.event

@@ -23,6 +23,7 @@ edu.uiuc.ncsa.myproxy.oa4mp.oauth2.servlet
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.state
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.clients
+edu.uiuc.ncsa.myproxy.oa4mp.oauth2.tokens
 edu.uiuc.ncsa.myproxy.oa4mp.qdl
 edu.uiuc.ncsa.myproxy.oa4mp.qdl.claims
 edu.uiuc.ncsa.myproxy.oa4mp.qdl.scripting
@@ -82,6 +83,7 @@ edu.uiuc.ncsa.security.oauth_2_0.server.scripts.qdl
 edu.uiuc.ncsa.security.servlet
 edu.uiuc.ncsa.security.servlet.mail
 edu.uiuc.ncsa.security.util.cli
+edu.uiuc.ncsa.security.util.cli.json_edit
 edu.uiuc.ncsa.security.util.configuration
 edu.uiuc.ncsa.security.util.functor
 edu.uiuc.ncsa.security.util.functor.logic
@@ -98,6 +100,7 @@ edu.uiuc.ncsa.security.util.pkcs
 edu.uiuc.ncsa.security.util.python
 edu.uiuc.ncsa.security.util.scripting
 edu.uiuc.ncsa.security.util.ssl
+edu.uiuc.ncsa.security.util.terminal
 edu.uiuc.ncsa.security.util.testing
 org.apache.maven.doxia.module.xhtml
 org.apache.velocity
