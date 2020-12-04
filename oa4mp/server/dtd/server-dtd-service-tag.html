@@ -358,18 +358,17 @@
     
 <tr class="a">
         
-<td style="vertical-align: top;">disableDefaultStores</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">false</td>
-        
-<td style="vertical-align: top;">The default server behavior is to default
-            to using a memory store if no other store is explicitly set. If set to true, this will make the server throw
-            an
-            exception if there is no store configured.
-        </td>
-    </tr>
+  <td style="vertical-align: top;">disableDefaultStores</td>
+  <td style="vertical-align: top;">N</td>
+  <td style="vertical-align: top;">true</td>
+  <td style="vertical-align: top;">Allow the server
+      to use  memory stores if no other store is explicitly set. If set to true, this will make the server throw
+      an
+      exception if there is no store configured.   The default is true precisely to force you to explicitly enable this,
+      since otherwise a store misconfiguration might be a silent error and everything (such as client
+      registrations, approvals, etc.) might end up in memory where they would vanish at service restart.
+  </td>
+</tr>
     
 <tr class="b">
         
