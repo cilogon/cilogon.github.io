@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2020-11-05
+            Last Published: 2021-02-05
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.0.2
+                         Version: 5.1.0
             </div>
     <div class="clear">
         <hr/>
@@ -166,31 +166,6 @@
     
 <tr class="b">
         
-<td style="vertical-align: top;">name</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">(none)</td>
-        
-<td style="vertical-align: top;">An arbitrary name for this configuration. Multiple configurations in a file are
-            supported.
-        </td>
-    </tr>
-    
-<tr class="a">
-        
-<td style="vertical-align: top;">version</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">latest</td>
-        
-<td style="vertical-align: top;">The version of the configuration file. If omitted, the most current is used.
-        </td>
-    </tr>
-    
-<tr class="b">
-        
 <td style="vertical-align: top;">address</td>
         
 <td style="vertical-align: top;">N</td>
@@ -198,7 +173,8 @@
 <td style="vertical-align: top;">N/A</td>
         
 <td style="vertical-align: top;">The address associated with this service. Normally this is not needed unless
-            there is some aliasing used by the host.The host name is taken from the servlet itself and used in
+            either there is some aliasing used by the host or safe garbage collection
+            is needed. Otherwise the host name is taken from the servlet itself and used in
             constructing urls that point to this server. For instance, if there is a server farm with a given
             external-facing address which will be resolved to one of the members based on load-balancing, this
             would be the external-facing address.
@@ -207,45 +183,45 @@
     
 <tr class="a">
         
-<td style="vertical-align: top;">pollingDirectory</td>
+<td style="vertical-align: top;">accessTokenLifetime</td>
         
 <td style="vertical-align: top;">N</td>
         
-<td style="vertical-align: top;">N/A</td>
+<td style="vertical-align: top;">900</td>
         
-<td style="vertical-align: top;">This enables polling for client approvals. The meaning of this is
-            that if there is a command line interface (CLI) which approves a client, a specific file is written
-            to this directory which will be read at intervals by the server, telling it that a new approval has been
-            written. This is because once a client configuration is loaded, it stays in memory. To disable this feature,
-            do not set this.  Note that the CLI should use the same configuration as the server.
+<td style="vertical-align: top;">Deprecated. Use defaultAccessTokenLifetime instead.
         </td>
     </tr>
     
 <tr class="b">
-           
-<td style="vertical-align: top;">OIDCEnabled</td>
-           
+        
+<td style="vertical-align: top;">authorizationGrantLifetime</td>
+        
 <td style="vertical-align: top;">N</td>
-           
-<td style="vertical-align: top;">true</td>
-           
-<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
-               This toggles OIDC support for the service. If true, then required claims (such as sibject) will be
-               checked for and ID tokens will be generated. Also, any request that does not contain the scope of <b>openid</b>
-               will be rejected. Note that if false, the service is OAuth 2.0 compliant, but not OIDC compliant.
-           </td>
-       </tr>
+        
+<td style="vertical-align: top;">900</td>
+        
+<td style="vertical-align: top;">&quot;<span style="background-color: #ff6600;">OAuth 2</span>
+            specific. This will set the lifetime of authorization grants, in seconds, issued by
+            the server.  The default is 900 seconds = 15 minutes. As long as the grant has not expired,
+            the second leg of the exchange (getting an access token) can be done. If there is too
+            long a gap between authentication and getting an access token, it will fail. Generally
+            the default is quite reasonable. See note below on units.
+        </td>
+    </tr>
     
 <tr class="a">
         
-<td style="vertical-align: top;">pollingInterval</td>
+<td style="vertical-align: top;">clientSecretLength</td>
         
 <td style="vertical-align: top;">N</td>
         
-<td style="vertical-align: top;">N/A</td>
+<td style="vertical-align: top;">64</td>
         
-<td style="vertical-align: top;">How frequently the polling directory will be accessed for new approvals.
-            Note that this is ignored if polling is not enabled.
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
+            specific. The server generates client secrets of this length in bytes, then displays them
+            to the client in Base64 encoding, which should be returned verbatim to the server. Note that
+            the returned secret is URL safe encoded as well. The default is 64 bytes = 512 bits.
         </td>
     </tr>
     
@@ -259,7 +235,7 @@
         
 <td style="vertical-align: top;">Enable debugging for this service. This will be written to the Tomcat logs and
             might be rather verbose. Use it only if you need it. The levels supported are (in order of
-            increasin verbosity) &quot;off&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;, &quot;severe&quot;, &quot;trace&quot;. Setting debug to
+            increasing verbosity) &quot;off&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;, &quot;severe&quot;, &quot;trace&quot;. Setting debug to
             &quot;trace&quot; will dump out virtually everything and give a running account of the operation of the
             service. This may be very, very large.
         </td>
@@ -267,121 +243,38 @@
     
 <tr class="a">
         
-<td style="vertical-align: top;">maxAllowedNewClientRequests</td>
+<td style="vertical-align: top;">defaultAccessTokenLifetime</td>
         
 <td style="vertical-align: top;">N</td>
         
-<td style="vertical-align: top;">unlimited</td>
-        
-<td style="vertical-align: top;">In the registration client, this is the maximum number of pending
-            client requests that the server will permit. Requests received after this limit is met will
-            be rejected. This is to prevent denial of service attacks for thousands of client requests.
-            Since such requests are normally not too frequent, this number can realistically be set low
-            to 10 or 20 with no issue on a production system.
-        </td>
-    </tr>
-    
-<tr class="b">
-        
-<td style="vertical-align: top;">refreshTokenLifetime</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">1296000</td>
+<td style="vertical-align: top;">900</td>
         
 <td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
-            specific. This will set a global maximum on the server, in seconds, for how long a refresh token can
-            remain active from issuance. The default is 15 days.
-        </td>
-    </tr>
-    
-<tr class="a">
-        
-<td style="vertical-align: top;">maxClientRefreshTokenLifetime</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">33696000</td>
-        
-<td style="vertical-align: top;">&quot;<span style="background-color: #ff6600;">OAuth 2</span>
-            specific. This will set a global maximum on the server, in seconds, for refresh tokens a client
-            may request at registration. The default is 13 months.
-        </td>
-    </tr>
-    
-<tr class="b">
-        
-<td style="vertical-align: top;">refreshTokenEnabled</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">false</td>
-        
-<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
-            specific. This tells the server to issue refresh tokens. Setting this false means the server will
-            not issue them, nor will clients be allowed to specify them at registration. Setting the
-            value for the refreshTokenLifetime in the configuration will be ignored if the server
-            does not issue refresh tokens.
+            specific. This will set the lifetime of access tokens, in seconds, issued by
+            the server. The default is 900 seconds = 15 minutes. Note that generally access tokens should have
+            much shorter lifetime than refresh tokens. The reason is that access tokens allow access to a resource
+            and refresh tokens let a client get access tokens. Best practices is that an access token is gotten
+            for a specific task and should be therefore short lived. Clients may request different lifetimes, but
+            are limited to this value as a maximum. See note below on units.
         </td>
     </tr>
 
     
-<tr class="a">
-        
-<td style="vertical-align: top;">clientSecretLength</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">64</td>
-        
-<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
-            specific. The server generates client secrets of this length in bytes, then displays them
-            to the client in Base64 encoding, which should be returned verbatim to the server. Note that
-            the returned secret is URL safe encoded as well.
-        </td>
-    </tr>
-    
 <tr class="b">
         
-<td style="vertical-align: top;">serverDN</td>
-        
-<td style="vertical-align: top;">N</td>
-        
-<td style="vertical-align: top;">(none)</td>
-        
-<td style="vertical-align: top;">A server DN applied to all MyProxy servers. This may also be applied
-            individually in the MyProxy element. Note especially that this only applies to MyProxy
-            servers and must be a valid Distinguished Name. Also, setting this in the tag for a myproxy
-            server over-rides the global setting. 
-        </td>
-    </tr>
-    
-<tr class="a">
-        
-  <td style="vertical-align: top;">disableDefaultStores</td>
-  <td style="vertical-align: top;">N</td>
-  <td style="vertical-align: top;">true</td>
-  <td style="vertical-align: top;">Allow the server
-      to use  memory stores if no other store is explicitly set. If set to true, this will make the server throw
-      an
-      exception if there is no store configured.   The default is true precisely to force you to explicitly enable this,
-      since otherwise a store misconfiguration might be a silent error and everything (such as client
-      registrations, approvals, etc.) might end up in memory where they would vanish at service restart.
-  </td>
-</tr>
-    
-<tr class="b">
-        
-<td style="vertical-align: top;">pingable</td>
+<td style="vertical-align: top;">disableDefaultStores</td>
         
 <td style="vertical-align: top;">N</td>
         
 <td style="vertical-align: top;">true</td>
         
-<td style="vertical-align: top;">Boolean value. If true, then contacting a server endpoint (HTTP GET) with an
-            argument of &quot;ping&quot;
-            will result in a response with HTTP return code of 204. If false, then an 500 exception will be thrown on
-            the server.
+<td style="vertical-align: top;">Allow the server
+            to use memory stores if no other store is explicitly set. If set to true, this will make the server throw
+            an
+            exception if there is no store configured. The default is true precisely to force you to explicitly enable
+            this,
+            since otherwise a store misconfiguration might be a silent error and everything (such as client
+            registrations, approvals, etc.) might end up in memory where they would vanish at service restart.
         </td>
     </tr>
     
@@ -413,6 +306,186 @@
     
 <tr class="a">
         
+<td style="vertical-align: top;">maxAccessTokenLifetime</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">1800</td>
+        
+<td style="vertical-align: top;">This is the largest access token lifetime, in seconds, that the server will
+            permit,
+            regardless of what is requested. Contrast this with the defaultAccessTokenLifetime property
+            which is used if clients specify nothing. The default is 30 minutes or 1800 seconds.
+            See note below on units.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">maxAllowedNewClientRequests</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">unlimited</td>
+        
+<td style="vertical-align: top;">In the registration client, this is the maximum number of pending
+            client requests that the server will permit. Requests received after this limit is met will
+            be rejected. This is to prevent denial of service attacks for thousands of client requests.
+            Since such requests are normally not too frequent, this number can realistically be set low
+            to 10 or 20 with no issue on a production system.
+        </td>
+    </tr>
+    
+<tr class="a">
+         
+<td style="vertical-align: top;">maxClientRefreshTokenLifetime</td>
+         
+<td style="vertical-align: top;">N</td>
+         
+<td style="vertical-align: top;">2592000</td>
+         
+<td style="vertical-align: top;">&quot;<span style="background-color: #ff6600;">OAuth 2</span>
+             specific. This will set a global maximum on the server, in seconds, for refresh tokens a client
+             may request at registration. The default is 13 months. Note that in practice this should
+             <i>never</i> exceed the server default maximum, because the server default is always enforced.
+             See note below on units.
+         </td>
+     </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">maxRefreshTokenLifetime</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">2592000</td>
+        
+<td style="vertical-align: top;">This is the largest refresh token lifetime in seconds that the server will permit,
+            regardless of what is requested. Default is 30 days or 2592000 seconds.
+            See note below on units.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">name</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">(none)</td>
+        
+<td style="vertical-align: top;">An arbitrary name for this configuration. Multiple configurations in a file are
+            supported.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">OIDCEnabled</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">true</td>
+        
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
+            This toggles OIDC support for the service. If true, then required claims (such as sibject) will be
+            checked for and ID tokens will be generated. Also, any request that does not contain the scope of
+            <b>openid</b>
+            will be rejected. Note that if false, the service is OAuth 2.0 compliant, but not OIDC compliant.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">pingable</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">true</td>
+        
+<td style="vertical-align: top;">Boolean value. If true, then contacting a server endpoint (HTTP GET) with an
+            argument of &quot;ping&quot;
+            will result in a response with HTTP return code of 204. If false, then an 500 exception will be thrown on
+            the server.
+        </td>
+    </tr>
+
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">pollingDirectory</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">N/A</td>
+        
+<td style="vertical-align: top;">This enables polling for client approvals. The meaning of this is
+            that if there is a command line interface (CLI) which approves a client, a specific file is written
+            to this directory which will be read at intervals by the server, telling it that a new approval has been
+            written. This is because once a client configuration is loaded, it stays in memory. To disable this feature,
+            do not set this. Note that the CLI should use the same configuration as the server.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">pollingInterval</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">N/A</td>
+        
+<td style="vertical-align: top;">How frequently the polling directory will be accessed for new approvals.
+            Note that this is ignored if polling is not enabled.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">refreshTokenEnabled</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">false</td>
+        
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span>
+            specific. This tells the server to issue refresh tokens. Setting this false means the server will
+            not issue them, nor will clients be allowed to specify them at registration. Setting the
+            value for the refreshTokenLifetime in the configuration will be ignored if the server
+            does not issue refresh tokens.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">refreshTokenLifetime</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">1296000</td>
+        
+<td style="vertical-align: top;">deprecated. Use maxRefreshTokenLifetime instead.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">safe_gc</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">true</td>
+        
+<td style="vertical-align: top;">Enable safe garbage collection in the various clean up threads. This means that
+            the server will not remove any token unless it is from the current service address.
+            This allows deploying OA4MP to environments with a shared database and possibly many
+            other OA4MP services. <i>Be sure to set the service address</i> (the <b>address</b> attribute described
+            in this table.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
 <td style="vertical-align: top;">scheme</td>
         
 <td style="vertical-align: top;">N</td>
@@ -439,8 +512,72 @@
             omitted then the default is used. If you wish to suppress this, set it equal to &quot;&quot;.
         </td>
     </tr>
+    
+<tr class="a">
+        
+<td style="vertical-align: top;">serverDN</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">(none)</td>
+        
+<td style="vertical-align: top;">A server DN applied to all MyProxy servers. This may also be applied
+            individually in the MyProxy element. Note especially that this only applies to MyProxy
+            servers and must be a valid Distinguished Name. Also, setting this in the tag for a myproxy
+            server over-rides the global setting.
+        </td>
+    </tr>
+
+    
+<tr class="b">
+        
+<td style="vertical-align: top;">version</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">latest</td>
+        
+<td style="vertical-align: top;">The version of the configuration file. If omitted, the most current is used.
+        </td>
+    </tr>
+
     </tbody>
 </table>
+
+</section><section>
+<h2><a name="A_note_on_time_and_units"></a>A note on time and units</h2>
+
+<p>As of 5.1, all the times for grants, access tokens and refresh tokens may have units
+specified. So this is a perfectly acceptable snipped from a configuration file:</p>
+
+<div>
+<pre>
+    &lt;service name=&quot;localhost:oa4mp.oa2.mariadb&quot;
+             disableDefaultStores=&quot;true&quot;
+             enableTwoFactorSupport=&quot;false&quot;
+             authorizationGrantLifetime=&quot;12345&quot;
+             defaultAccessTokenLifetime=&quot;1009000 ms&quot;
+             maxAccessTokenLifetime=&quot;1800 sec&quot;
+             maxClientRefreshTokenLifetime=&quot;2592000 sec&quot;
+             maxRefreshTokenLifetime=&quot;1000000s.&quot;
+             refreshTokenEnabled=&quot;true&quot;
+             enableTokenExchange=&quot;true&quot;
+             serverDN=&quot;CN=localhost2&quot;
+    &lt;!-- lots of stuff --&gt;
+</pre></div>
+
+<p>Note that, in order to maintain backwards compatibility, the assumption is that all of these <i>without</i>
+units are in <b>seconds</b>. Blanks before and after units are allowed. Acceptable units are</p>
+
+<ul>
+    
+<li>&quot;sec.&quot;, &quot;sec&quot;, &quot;s.&quot; or &quot;s&quot; for seconds</li>
+    
+<li>&quot;ms.&quot;, &quot;ms&quot; or no units for milliseconds</li>
+</ul>
+
+</section><section>
+<h2><a name="Notes"></a>Notes</h2>
 
 <p>The <span style="font-weight: bold;">name</span> can be anything. The name of the configuration to use may be
     specified in the deployment descriptor (web.xml) file. If there is a single configuration in the file, that will be
@@ -523,7 +660,7 @@
 </div>
 <div id="footer">
     <div class="xright">&#169;    
-                    2020
+                    2021
         
                     
     

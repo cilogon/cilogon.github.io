@@ -8,6 +8,7 @@ edu.uiuc.ncsa.qdl.config
 edu.uiuc.ncsa.qdl.exceptions
 edu.uiuc.ncsa.qdl.workspace
 edu.uiuc.ncsa.qdl.state
+edu.uiuc.ncsa.qdl.xml
 edu.uiuc.ncsa.qdl.install
 edu.uiuc.ncsa.qdl.generated
 edu.uiuc.ncsa.qdl.extensions.example
@@ -25,6 +26,7 @@ edu.uiuc.ncsa.security.core.util
 edu.uiuc.ncsa.security.core.configuration
 edu.uiuc.ncsa.security.core.configuration.provider
 edu.uiuc.ncsa.security.core.exceptions
+edu.uiuc.ncsa.security.core.inheritance
 edu.uiuc.ncsa.security.core.cache
 edu.uiuc.ncsa.security.core.ipc
 edu.uiuc.ncsa.security.util.cli
