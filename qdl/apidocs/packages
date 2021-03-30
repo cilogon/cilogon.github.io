@@ -15,6 +15,7 @@ edu.uiuc.ncsa.qdl.extensions.example
 edu.uiuc.ncsa.qdl.extensions
 edu.uiuc.ncsa.qdl.module
 edu.uiuc.ncsa.qdl.statements
+edu.uiuc.ncsa.qdl.functions
 edu.uiuc.ncsa.qdl.variables
 javax.mail
 javax.mail.util
@@ -30,6 +31,7 @@ edu.uiuc.ncsa.security.core.inheritance
 edu.uiuc.ncsa.security.core.cache
 edu.uiuc.ncsa.security.core.ipc
 edu.uiuc.ncsa.security.util.cli
+edu.uiuc.ncsa.security.util.cli.editing
 edu.uiuc.ncsa.security.util.cli.json_edit
 edu.uiuc.ncsa.security.util.functor.user_defined
 edu.uiuc.ncsa.security.util.functor
@@ -60,3 +62,6 @@ edu.uiuc.ncsa.security.storage.sql.postgres
 edu.uiuc.ncsa.security.storage.sql.mariadb
 edu.uiuc.ncsa.security.storage.sql.h2
 edu.uiuc.ncsa.security.storage.data
+ch.obermuhlner.math.big
+ch.obermuhlner.math.big.stream
+ch.obermuhlner.math.big.internal

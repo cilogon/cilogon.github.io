@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-02-05
+            Last Published: 2021-03-30
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.1.0
+                         Version: 5.1.1
             </div>
     <div class="clear">
         <hr/>
@@ -143,6 +143,7 @@
 
 
 <p>Changes to the OA4MP server by version.</p>
+
 <section>
 <h2><a name="a5.1"></a>5.1</h2>
 
@@ -187,7 +188,20 @@
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-892">CIL-892</a>: Missing documentation for the client well known URI tag. This can be found
     <a class="externalLink" href="https://cilogon.github.io/oa4mp/client/dtd/dtd-file.html">here</a>. </li>
     
-<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-906">CIL-906</a>: in id tokens, the auth_time claim must be a number. It was being returned as a string.</li>
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-906">CIL-906</a>: In id tokens, the auth_time claim must be a number. It was being returned as a string.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-911">CIL-911</a>: Return the state parameter with errors consistently.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-915">CIL-915</a>: Review and update the scopes documentation for clients.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-917">CIL-917</a>: Improved client registration templates to include more information.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-922">CIL-922</a>: Base 32 encode all non-JWT tokens. This is because some libraries (in PHP)
+    were unable to reliably url encode the new tokens. Base 32 tokens are case insensitive to boot.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-931">CIL-931</a>: The client management API needs to return strict_scopes when GETting a client.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-936">CIL-936</a>: Public clients were being rejected for access tokens.</li>
 </ul>
 
 </section><section>
@@ -221,10 +235,9 @@
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-739">CIL-739</a>: Restrict to absolute URIs callbacks only.</li>
     
-<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-836">CIL-836</a>: Make <a class="externalLink" href="https://cilogon.github.io/qdl/index.html">QDL</a> support official.</li>
-
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-836">CIL-836</a>, <a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/19">GitHub #19</a> : Make <a class="externalLink" href="https://cilogon.github.io/qdl/index.html">QDL</a> support official.</li>
+    
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-850">CIL-850</a> Error in reading old configuration by new configuration.</li>
-
 </ul>
 
 </section><section>

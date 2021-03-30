@@ -2,6 +2,7 @@ edu.uiuc.ncsa.security.delegation.client
 edu.uiuc.ncsa.security.delegation.client.server
 edu.uiuc.ncsa.security.delegation.client.request
 edu.uiuc.ncsa.security.util.cli
+edu.uiuc.ncsa.security.util.cli.editing
 edu.uiuc.ncsa.security.util.cli.json_edit
 edu.uiuc.ncsa.security.util.functor.user_defined
 edu.uiuc.ncsa.security.util.functor
@@ -72,8 +73,10 @@ edu.uiuc.ncsa.myproxy.oa4mp.loader
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.functor
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.functor.claims
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage
+edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.df
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.tx
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.clients
+edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.vo
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.json
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.flows
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2

@@ -23,7 +23,9 @@ edu.uiuc.ncsa.myproxy.oa4mp.oauth2.servlet
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.state
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.clients
+edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.df
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.tx
+edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.vo
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.tokens
 edu.uiuc.ncsa.myproxy.oa4mp.qdl
 edu.uiuc.ncsa.myproxy.oa4mp.qdl.acl
@@ -86,6 +88,7 @@ edu.uiuc.ncsa.security.oauth_2_0.server.scripts.qdl
 edu.uiuc.ncsa.security.servlet
 edu.uiuc.ncsa.security.servlet.mail
 edu.uiuc.ncsa.security.util.cli
+edu.uiuc.ncsa.security.util.cli.editing
 edu.uiuc.ncsa.security.util.cli.json_edit
 edu.uiuc.ncsa.security.util.configuration
 edu.uiuc.ncsa.security.util.functor

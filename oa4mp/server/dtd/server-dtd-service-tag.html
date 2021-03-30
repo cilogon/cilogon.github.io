@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-02-05
+            Last Published: 2021-03-30
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.1.0
+                         Version: 5.1.1
             </div>
     <div class="clear">
         <hr/>
@@ -164,7 +164,7 @@
 <td style="vertical-align: top;">Description</td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="address">
         
 <td style="vertical-align: top;">address</td>
         
@@ -181,7 +181,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="accessTokenLifetime">
         
 <td style="vertical-align: top;">accessTokenLifetime</td>
         
@@ -193,7 +193,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="authorizationGrantLifetime">
         
 <td style="vertical-align: top;">authorizationGrantLifetime</td>
         
@@ -210,7 +210,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="clientSecretLength">
         
 <td style="vertical-align: top;">clientSecretLength</td>
         
@@ -225,7 +225,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="debug">
         
 <td style="vertical-align: top;">debug</td>
         
@@ -241,7 +241,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="defaultAccessTokenLifetime">
         
 <td style="vertical-align: top;">defaultAccessTokenLifetime</td>
         
@@ -260,7 +260,7 @@
     </tr>
 
     
-<tr class="b">
+<tr class="b" id="disableDefaultStores">
         
 <td style="vertical-align: top;">disableDefaultStores</td>
         
@@ -278,7 +278,32 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="enableDeviceFlow">
+        
+<td style="vertical-align: top;">enableDeviceFlow</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">false</td>
+        
+<td style="vertical-align: top;">Boolean value. If true, the support for the device authorization flow as per RFC 8628 is enabled.
+        </td>
+    </tr>
+
+    
+<tr class="b" id="enableTokenExchange">
+        
+<td style="vertical-align: top;">enableTokenExchange</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">true</td>
+        
+<td style="vertical-align: top;">Boolean value. If true, the support for exchanging tokens as per RFC 8693 is enabled.
+        </td>
+    </tr>
+    
+<tr class="a" id="enableTwoFactorSupport">
         
 <td style="vertical-align: top;">enableTwoFactorSupport</td>
         
@@ -290,7 +315,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="issuer">
         
 <td style="vertical-align: top;">issuer</td>
         
@@ -304,7 +329,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="maxAccessTokenLifetime">
         
 <td style="vertical-align: top;">maxAccessTokenLifetime</td>
         
@@ -320,7 +345,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="maxAllowedNewClientRequests">
         
 <td style="vertical-align: top;">maxAllowedNewClientRequests</td>
         
@@ -336,7 +361,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="maxClientRefreshTokenLifetime">
          
 <td style="vertical-align: top;">maxClientRefreshTokenLifetime</td>
          
@@ -352,7 +377,7 @@
          </td>
      </tr>
     
-<tr class="b">
+<tr class="b" id="maxRefreshTokenLifetime">
         
 <td style="vertical-align: top;">maxRefreshTokenLifetime</td>
         
@@ -366,7 +391,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="name">
         
 <td style="vertical-align: top;">name</td>
         
@@ -379,7 +404,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="OIDCEnabled">
         
 <td style="vertical-align: top;">OIDCEnabled</td>
         
@@ -395,7 +420,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="pingable">
         
 <td style="vertical-align: top;">pingable</td>
         
@@ -411,7 +436,7 @@
     </tr>
 
     
-<tr class="b">
+<tr class="b" id="pollingDirectory">
         
 <td style="vertical-align: top;">pollingDirectory</td>
         
@@ -427,7 +452,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="pollingInterval">
         
 <td style="vertical-align: top;">pollingInterval</td>
         
@@ -440,7 +465,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="refreshTokenEnabled">
         
 <td style="vertical-align: top;">refreshTokenEnabled</td>
         
@@ -456,7 +481,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="refreshTokenLifetime">
         
 <td style="vertical-align: top;">refreshTokenLifetime</td>
         
@@ -468,7 +493,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="safe_gc">
         
 <td style="vertical-align: top;">safe_gc</td>
         
@@ -484,7 +509,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="scheme">
         
 <td style="vertical-align: top;">scheme</td>
         
@@ -500,7 +525,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="b" id="schemeSpecificPart">
         
 <td style="vertical-align: top;">schemeSpecificPart</td>
         
@@ -513,7 +538,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="a" id="serverDN">
         
 <td style="vertical-align: top;">serverDN</td>
         
@@ -529,7 +554,7 @@
     </tr>
 
     
-<tr class="b">
+<tr class="b" id="version">
         
 <td style="vertical-align: top;">version</td>
         
@@ -571,9 +596,9 @@ units are in <b>seconds</b>. Blanks before and after units are allowed. Acceptab
 
 <ul>
     
-<li>&quot;sec.&quot;, &quot;sec&quot;, &quot;s.&quot; or &quot;s&quot; for seconds</li>
+<li>&quot;sec.&quot;, &quot;sec&quot;, &quot;s.&quot;, &quot;s&quot; or no units for seconds</li>
     
-<li>&quot;ms.&quot;, &quot;ms&quot; or no units for milliseconds</li>
+<li>&quot;ms.&quot;, &quot;ms&quot; for milliseconds</li>
 </ul>
 
 </section><section>
