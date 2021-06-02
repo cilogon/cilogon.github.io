@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-04-09
+            Last Published: 2021-06-02
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.1.2
+                         Version: 5.1.3
             </div>
     <div class="clear">
         <hr/>
@@ -164,7 +164,22 @@
 <td style="vertical-align: top;">Description</td>
     </tr>
     
-<tr class="b" id="address">
+<tr class="b" id="acNewClientNotify">
+        
+<td style="vertical-align: top;">acNewClientNotify</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">false</td>
+        
+<td style="vertical-align: top;">This forces email notifications to be sent whenever any admin client
+            creates a new public or confidential client. Note that admin clients may have this
+            directly enabled on a case by case basis. If this is true <i>every</i> new client
+            created by <i>any</i> admin client triggers a notification.
+        </td>
+    </tr>
+    
+<tr class="a" id="address">
         
 <td style="vertical-align: top;">address</td>
         
@@ -181,7 +196,7 @@
         </td>
     </tr>
     
-<tr class="a" id="accessTokenLifetime">
+<tr class="b" id="accessTokenLifetime">
         
 <td style="vertical-align: top;">accessTokenLifetime</td>
         
@@ -193,7 +208,7 @@
         </td>
     </tr>
     
-<tr class="b" id="authorizationGrantLifetime">
+<tr class="a" id="authorizationGrantLifetime">
         
 <td style="vertical-align: top;">authorizationGrantLifetime</td>
         
@@ -210,7 +225,7 @@
         </td>
     </tr>
     
-<tr class="a" id="clientSecretLength">
+<tr class="b" id="clientSecretLength">
         
 <td style="vertical-align: top;">clientSecretLength</td>
         
@@ -225,7 +240,7 @@
         </td>
     </tr>
     
-<tr class="b" id="debug">
+<tr class="a" id="debug">
         
 <td style="vertical-align: top;">debug</td>
         
@@ -241,7 +256,7 @@
         </td>
     </tr>
     
-<tr class="a" id="defaultAccessTokenLifetime">
+<tr class="b" id="defaultAccessTokenLifetime">
         
 <td style="vertical-align: top;">defaultAccessTokenLifetime</td>
         
@@ -260,7 +275,7 @@
     </tr>
 
     
-<tr class="b" id="disableDefaultStores">
+<tr class="a" id="disableDefaultStores">
         
 <td style="vertical-align: top;">disableDefaultStores</td>
         
@@ -278,7 +293,7 @@
         </td>
     </tr>
     
-<tr class="a" id="enableDeviceFlow">
+<tr class="b" id="enableDeviceFlow">
         
 <td style="vertical-align: top;">enableDeviceFlow</td>
         
@@ -291,7 +306,7 @@
     </tr>
 
     
-<tr class="b" id="enableTokenExchange">
+<tr class="a" id="enableTokenExchange">
         
 <td style="vertical-align: top;">enableTokenExchange</td>
         
@@ -303,7 +318,7 @@
         </td>
     </tr>
     
-<tr class="a" id="enableTwoFactorSupport">
+<tr class="b" id="enableTwoFactorSupport">
         
 <td style="vertical-align: top;">enableTwoFactorSupport</td>
         
@@ -315,7 +330,7 @@
         </td>
     </tr>
     
-<tr class="b" id="issuer">
+<tr class="a" id="issuer">
         
 <td style="vertical-align: top;">issuer</td>
         
@@ -329,7 +344,7 @@
         </td>
     </tr>
     
-<tr class="a" id="maxAccessTokenLifetime">
+<tr class="b" id="maxAccessTokenLifetime">
         
 <td style="vertical-align: top;">maxAccessTokenLifetime</td>
         
@@ -345,7 +360,7 @@
         </td>
     </tr>
     
-<tr class="b" id="maxAllowedNewClientRequests">
+<tr class="a" id="maxAllowedNewClientRequests">
         
 <td style="vertical-align: top;">maxAllowedNewClientRequests</td>
         
@@ -361,7 +376,7 @@
         </td>
     </tr>
     
-<tr class="a" id="maxClientRefreshTokenLifetime">
+<tr class="b" id="maxClientRefreshTokenLifetime">
          
 <td style="vertical-align: top;">maxClientRefreshTokenLifetime</td>
          
@@ -377,7 +392,7 @@
          </td>
      </tr>
     
-<tr class="b" id="maxRefreshTokenLifetime">
+<tr class="a" id="maxRefreshTokenLifetime">
         
 <td style="vertical-align: top;">maxRefreshTokenLifetime</td>
         
@@ -391,7 +406,7 @@
         </td>
     </tr>
     
-<tr class="a" id="name">
+<tr class="b" id="name">
         
 <td style="vertical-align: top;">name</td>
         
@@ -404,7 +419,7 @@
         </td>
     </tr>
     
-<tr class="b" id="OIDCEnabled">
+<tr class="a" id="OIDCEnabled">
         
 <td style="vertical-align: top;">OIDCEnabled</td>
         
@@ -420,7 +435,7 @@
         </td>
     </tr>
     
-<tr class="a" id="pingable">
+<tr class="b" id="pingable">
         
 <td style="vertical-align: top;">pingable</td>
         
@@ -436,7 +451,7 @@
     </tr>
 
     
-<tr class="b" id="pollingDirectory">
+<tr class="a" id="pollingDirectory">
         
 <td style="vertical-align: top;">pollingDirectory</td>
         
@@ -452,7 +467,7 @@
         </td>
     </tr>
     
-<tr class="a" id="pollingInterval">
+<tr class="b" id="pollingInterval">
         
 <td style="vertical-align: top;">pollingInterval</td>
         
@@ -465,7 +480,7 @@
         </td>
     </tr>
     
-<tr class="b" id="refreshTokenEnabled">
+<tr class="a" id="refreshTokenEnabled">
         
 <td style="vertical-align: top;">refreshTokenEnabled</td>
         
@@ -481,7 +496,7 @@
         </td>
     </tr>
     
-<tr class="a" id="refreshTokenLifetime">
+<tr class="b" id="refreshTokenLifetime">
         
 <td style="vertical-align: top;">refreshTokenLifetime</td>
         
@@ -493,7 +508,7 @@
         </td>
     </tr>
     
-<tr class="b" id="safe_gc">
+<tr class="a" id="safe_gc">
         
 <td style="vertical-align: top;">safe_gc</td>
         
@@ -509,7 +524,7 @@
         </td>
     </tr>
     
-<tr class="a" id="scheme">
+<tr class="b" id="scheme">
         
 <td style="vertical-align: top;">scheme</td>
         
@@ -525,7 +540,7 @@
         </td>
     </tr>
     
-<tr class="b" id="schemeSpecificPart">
+<tr class="a" id="schemeSpecificPart">
         
 <td style="vertical-align: top;">schemeSpecificPart</td>
         
@@ -538,7 +553,7 @@
         </td>
     </tr>
     
-<tr class="a" id="serverDN">
+<tr class="b" id="serverDN">
         
 <td style="vertical-align: top;">serverDN</td>
         
@@ -554,7 +569,7 @@
     </tr>
 
     
-<tr class="b" id="version">
+<tr class="a" id="version">
         
 <td style="vertical-align: top;">version</td>
         
