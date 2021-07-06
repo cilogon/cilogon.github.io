@@ -92,6 +92,7 @@ edu.uiuc.ncsa.myproxy.oa4mp.oauth2.cm.util.admin
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.cm
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.cm.oidc_cm
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.tokens
+edu.uiuc.ncsa.myproxy.oa4mp.qdl.util
 edu.uiuc.ncsa.myproxy.oa4mp.qdl.scripting
 edu.uiuc.ncsa.myproxy.oa4mp.qdl
 edu.uiuc.ncsa.myproxy.oa4mp.qdl.claims

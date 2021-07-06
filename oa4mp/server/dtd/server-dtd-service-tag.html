@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-06-02
+            Last Published: 2021-07-06
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.1.3
+                         Version: 5.1.4
             </div>
     <div class="clear">
         <hr/>
@@ -479,8 +479,25 @@
             Note that this is ignored if polling is not enabled.
         </td>
     </tr>
+
     
-<tr class="a" id="refreshTokenEnabled">
+<tr class="a" id="printTSInDebug">
+        
+<td style="vertical-align: top;">printTSInDebug</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">true</td>
+        
+<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span> If true, this tells the
+            server to print all debug message with a leading timestamp. Some systems
+            have multiple layers of logging and disabling this is needed.
+            <b>Note:</b> on CILogon server deploys this is set to false automatically.
+        </td>
+    </tr>
+
+    
+<tr class="b" id="refreshTokenEnabled">
         
 <td style="vertical-align: top;">refreshTokenEnabled</td>
         
@@ -496,7 +513,7 @@
         </td>
     </tr>
     
-<tr class="b" id="refreshTokenLifetime">
+<tr class="a" id="refreshTokenLifetime">
         
 <td style="vertical-align: top;">refreshTokenLifetime</td>
         
@@ -508,7 +525,7 @@
         </td>
     </tr>
     
-<tr class="a" id="safe_gc">
+<tr class="b" id="safe_gc">
         
 <td style="vertical-align: top;">safe_gc</td>
         
@@ -524,7 +541,7 @@
         </td>
     </tr>
     
-<tr class="b" id="scheme">
+<tr class="a" id="scheme">
         
 <td style="vertical-align: top;">scheme</td>
         
@@ -540,7 +557,7 @@
         </td>
     </tr>
     
-<tr class="a" id="schemeSpecificPart">
+<tr class="b" id="schemeSpecificPart">
         
 <td style="vertical-align: top;">schemeSpecificPart</td>
         
@@ -553,7 +570,7 @@
         </td>
     </tr>
     
-<tr class="b" id="serverDN">
+<tr class="a" id="serverDN">
         
 <td style="vertical-align: top;">serverDN</td>
         
@@ -569,7 +586,7 @@
     </tr>
 
     
-<tr class="a" id="version">
+<tr class="b" id="version">
         
 <td style="vertical-align: top;">version</td>
         
