@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-07-27
+            Last Published: 2021-08-23
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.0
+                         Version: 5.2.1
             </div>
     <div class="clear">
         <hr/>
@@ -166,16 +166,15 @@
     
 <tr class="b" id="acNewClientNotify">
         
-<td style="vertical-align: top;">acNewClientNotify</td>
+<td style="vertical-align: top;">notifyACEmailAddresses</td>
         
 <td style="vertical-align: top;">N</td>
         
 <td style="vertical-align: top;">false</td>
         
-<td style="vertical-align: top;">This forces email notifications to be sent whenever any admin client
-            creates a new public or confidential client. Note that admin clients may have this
-            directly enabled on a case by case basis. If this is true <i>every</i> new client
-            created by <i>any</i> admin client triggers a notification.
+<td style="vertical-align: top;">A semi-colon separated list of email addresses where notifications
+            from the client management servlet are sent on actions. Note that are only
+            sent if the admin client has been enabled to do so.
         </td>
     </tr>
     
@@ -224,13 +223,19 @@
             the default is quite reasonable. See note below on units.
         </td>
     </tr>
-<tr id="cleanupInterval">
-    <td style="vertical-align: top;">cleanup_interval</td>
-    <td style="vertical-align: top;">N</td>
-    <td style="vertical-align: top;">20 minutes</td>
-    <td style="vertical-align: top;">How often should the cleanup thread run (in seconds).</td>
-</tr>
-<tr class="b" id="clientSecretLength">
+    
+<tr class="b" id="cleanupInterval">
+        
+<td style="vertical-align: top;">cleanup_interval</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">20 minutes</td>
+        
+<td style="vertical-align: top;">How often should the cleanup thread run (in seconds).</td>
+    </tr>
+    
+<tr class="a" id="clientSecretLength">
         
 <td style="vertical-align: top;">clientSecretLength</td>
         
@@ -245,7 +250,7 @@
         </td>
     </tr>
     
-<tr class="a" id="debug">
+<tr class="b" id="debug">
         
 <td style="vertical-align: top;">debug</td>
         
@@ -261,7 +266,7 @@
         </td>
     </tr>
     
-<tr class="b" id="defaultAccessTokenLifetime">
+<tr class="a" id="defaultAccessTokenLifetime">
         
 <td style="vertical-align: top;">defaultAccessTokenLifetime</td>
         
@@ -280,7 +285,7 @@
     </tr>
 
     
-<tr class="a" id="disableDefaultStores">
+<tr class="b" id="disableDefaultStores">
         
 <td style="vertical-align: top;">disableDefaultStores</td>
         
@@ -298,7 +303,7 @@
         </td>
     </tr>
     
-<tr class="b" id="enableDeviceFlow">
+<tr class="a" id="enableDeviceFlow">
         
 <td style="vertical-align: top;">enableDeviceFlow</td>
         
@@ -313,7 +318,7 @@
     </tr>
 
     
-<tr class="a" id="enableTokenExchange">
+<tr class="b" id="enableTokenExchange">
         
 <td style="vertical-align: top;">enableTokenExchange</td>
         
@@ -325,7 +330,7 @@
         </td>
     </tr>
     
-<tr class="b" id="enableTwoFactorSupport">
+<tr class="a" id="enableTwoFactorSupport">
         
 <td style="vertical-align: top;">enableTwoFactorSupport</td>
         
@@ -337,7 +342,7 @@
         </td>
     </tr>
     
-<tr class="a" id="issuer">
+<tr class="b" id="issuer">
         
 <td style="vertical-align: top;">issuer</td>
         
@@ -351,7 +356,7 @@
         </td>
     </tr>
     
-<tr class="b" id="maxAccessTokenLifetime">
+<tr class="a" id="maxAccessTokenLifetime">
         
 <td style="vertical-align: top;">maxAccessTokenLifetime</td>
         
@@ -367,7 +372,7 @@
         </td>
     </tr>
     
-<tr class="a" id="maxAllowedNewClientRequests">
+<tr class="b" id="maxAllowedNewClientRequests">
         
 <td style="vertical-align: top;">maxAllowedNewClientRequests</td>
         
@@ -383,7 +388,7 @@
         </td>
     </tr>
     
-<tr class="b" id="maxClientRefreshTokenLifetime">
+<tr class="a" id="maxClientRefreshTokenLifetime">
          
 <td style="vertical-align: top;">maxClientRefreshTokenLifetime</td>
          
@@ -399,7 +404,7 @@
          </td>
      </tr>
     
-<tr class="a" id="maxRefreshTokenLifetime">
+<tr class="b" id="maxRefreshTokenLifetime">
         
 <td style="vertical-align: top;">maxRefreshTokenLifetime</td>
         
@@ -413,7 +418,7 @@
         </td>
     </tr>
     
-<tr class="b" id="name">
+<tr class="a" id="name">
         
 <td style="vertical-align: top;">name</td>
         
@@ -426,7 +431,7 @@
         </td>
     </tr>
     
-<tr class="a" id="OIDCEnabled">
+<tr class="b" id="OIDCEnabled">
         
 <td style="vertical-align: top;">OIDCEnabled</td>
         
@@ -442,7 +447,7 @@
         </td>
     </tr>
     
-<tr class="b" id="pingable">
+<tr class="a" id="pingable">
         
 <td style="vertical-align: top;">pingable</td>
         
@@ -458,7 +463,7 @@
     </tr>
 
     
-<tr class="a" id="pollingDirectory">
+<tr class="b" id="pollingDirectory">
         
 <td style="vertical-align: top;">pollingDirectory</td>
         
@@ -474,7 +479,7 @@
         </td>
     </tr>
     
-<tr class="b" id="pollingInterval">
+<tr class="a" id="pollingInterval">
         
 <td style="vertical-align: top;">pollingInterval</td>
         
@@ -488,7 +493,7 @@
     </tr>
 
     
-<tr class="a" id="printTSInDebug">
+<tr class="b" id="printTSInDebug">
         
 <td style="vertical-align: top;">printTSInDebug</td>
         
@@ -504,7 +509,7 @@
     </tr>
 
     
-<tr class="b" id="refreshTokenEnabled">
+<tr class="a" id="refreshTokenEnabled">
         
 <td style="vertical-align: top;">refreshTokenEnabled</td>
         
@@ -520,7 +525,7 @@
         </td>
     </tr>
     
-<tr class="a" id="refreshTokenLifetime">
+<tr class="b" id="refreshTokenLifetime">
         
 <td style="vertical-align: top;">refreshTokenLifetime</td>
         
@@ -532,7 +537,7 @@
         </td>
     </tr>
     
-<tr class="b" id="safe_gc">
+<tr class="a" id="safe_gc">
         
 <td style="vertical-align: top;">safe_gc</td>
         
@@ -548,7 +553,7 @@
         </td>
     </tr>
     
-<tr class="a" id="scheme">
+<tr class="b" id="scheme">
         
 <td style="vertical-align: top;">scheme</td>
         
@@ -564,7 +569,7 @@
         </td>
     </tr>
     
-<tr class="b" id="schemeSpecificPart">
+<tr class="a" id="schemeSpecificPart">
         
 <td style="vertical-align: top;">schemeSpecificPart</td>
         
@@ -577,7 +582,7 @@
         </td>
     </tr>
     
-<tr class="a" id="serverDN">
+<tr class="b" id="serverDN">
         
 <td style="vertical-align: top;">serverDN</td>
         
@@ -593,7 +598,7 @@
     </tr>
 
     
-<tr class="b" id="version">
+<tr class="a" id="version">
         
 <td style="vertical-align: top;">version</td>
         
