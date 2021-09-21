@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-08-23
+            Last Published: 2021-09-21
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.1
+                         Version: 5.2.2
             </div>
     <div class="clear">
         <hr/>
@@ -208,9 +208,25 @@
             This is enforced after the first attempt, which may be done immediately.
         </td>
     </tr>
-
     
 <tr class="a">
+        
+<td>lifetime</td>
+        
+<td>N</td>
+        
+<td>current server default for authorization grant lifetimes</td>
+        
+<td>Value (default is seconds, though you can specify units for sec or ms if you like)
+            for the number of seconds that a request to this service is valid. This will be
+            the lifetime of the authorization grant for this request. Note that if this is
+            not set, the server-wide default for authorization grants is used. It may also
+            be set on a per client basis, which supercedes all other values.
+        </td>
+    </tr>
+
+    
+<tr class="b">
         
 <td>codeChars</td>
         
@@ -223,7 +239,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td>codeLength</td>
         
@@ -237,7 +253,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="b">
         
 <td>codeSeparator</td>
         
@@ -248,7 +264,7 @@
 <td>A character that is inserted between periods (see below) in the user code.</td>
     </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td>codePeriodLength</td>
         
@@ -282,6 +298,7 @@ This has all of the defaults in a configuration
         authorizationURI=&quot;https://dev.cilogon.org/device_authorization&quot;
         verificationURI=&quot;https://dev.cilogon.org/device&quot;
         interval=&quot;5 sec.&quot;
+        lifetime=&quot;1200 sec.&quot;
         codeChars=&quot;234679CDFGHJKLMNPQRTVWXZ&quot;
         codeLength=&quot;9&quot;
         codeSeparator=&quot;-&quot;

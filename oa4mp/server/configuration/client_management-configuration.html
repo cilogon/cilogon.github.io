@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-08-23
+            Last Published: 2021-09-21
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.1
+                         Version: 5.2.2
             </div>
     <div class="clear">
         <hr/>
@@ -166,6 +166,8 @@
     are used and the endpoint is active.
 </p>
 
+
+
 <table class="bodyTable" border="2">
     <tbody>
     
@@ -263,7 +265,8 @@
         
 <td>(RFC 7591 protocol only) The id of a configured client which is to be used as a template. This means that create
         requests will create an copy of this client and use any arguments as overrides. This allows
-        you to have a uniform registration for all clients (e.g. all of your clients use the device flow
+        you to have a uniform registration for all clients (e.g. all of your clients use the device flow,
+        are auto-approved,     
         and need identical configurations). This only applies to the rfc 7951 api. You would need
         to create this client (tip: never approve it) in the CLI before setting this.</td>
     </tr>
@@ -314,6 +317,8 @@
 <pre>
     &lt;clientManagement enabled=&quot;false&quot;&gt;
 </pre></div>
+
+<p>Any other attributes will be ignored, so you can just turn it on or off.</p>
 
 
 </section></section>

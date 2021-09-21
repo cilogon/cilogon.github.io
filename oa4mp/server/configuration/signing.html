@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-08-23
+            Last Published: 2021-09-21
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.1
+                         Version: 5.2.2
             </div>
     <div class="clear">
         <hr/>
@@ -187,8 +187,10 @@
 </table>
 
 <p>
-    There is one <b><i>required</i></b> attribute and that is defaultKeyID which tells which
-    key should be used for signing.
+    There is one  attribute and that is defaultKeyID which tells which
+    key should be used for signing. If you have a single key, then that will
+    be used as the default, otherwise you must specify the default key or there
+    will be an error at boot.
 </p>
 
 <section>
@@ -206,7 +208,8 @@
 </pre></div>
 
 <p>
-    This sets the path to the file keys.jwks in the given directory. If you do not the defaultKeyID an error will
+    This sets the path to the file keys.jwks in the given directory. This file contains
+    multiple keys, so if you do not set the defaultKeyID, an error will
     be generated on server startup. Within that file is an entry that has a unique
     key identifier (&quot;kid&quot;):
 </p>
