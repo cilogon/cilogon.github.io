@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-10-25
+            Last Published: 2022-01-24
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.3
+                         Version: 5.2.4
             </div>
     <div class="clear">
         <hr/>
@@ -298,9 +298,20 @@
             are limited to the maximum value as st below. See note below on units.
         </td>
     </tr>
-
     
-<tr class="a" id="disableDefaultStores">
+<tr class="a" id="demoModeEnabled">
+        
+<td style="vertical-align: top;">demoModeEnabled</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">false</td>
+        
+<td style="vertical-align: top;">Enable demo mode. This just shuts off authorization and is intended that an administrator
+        can quickly set up OA4MP to evaluate it. See <a href="../manuals/demo-mode.xhtml">using demo mode</a>.</td>
+    </tr>
+    
+<tr class="b" id="disableDefaultStores">
         
 <td style="vertical-align: top;">disableDefaultStores</td>
         
@@ -318,7 +329,7 @@
         </td>
     </tr>
     
-<tr class="b" id="enableDeviceFlow">
+<tr class="a" id="enableDeviceFlow">
         
 <td style="vertical-align: top;">enableDeviceFlow</td>
         
@@ -333,7 +344,7 @@
     </tr>
 
     
-<tr class="a" id="enableTokenExchange">
+<tr class="b" id="enableTokenExchange">
         
 <td style="vertical-align: top;">enableTokenExchange</td>
         
@@ -345,7 +356,7 @@
         </td>
     </tr>
     
-<tr class="b" id="enableTwoFactorSupport">
+<tr class="a" id="enableTwoFactorSupport">
         
 <td style="vertical-align: top;">enableTwoFactorSupport</td>
         
@@ -357,7 +368,7 @@
         </td>
     </tr>
     
-<tr class="a" id="issuer">
+<tr class="b" id="issuer">
         
 <td style="vertical-align: top;">issuer</td>
         
@@ -371,7 +382,7 @@
         </td>
     </tr>
     
-<tr class="b" id="maxAccessTokenLifetime">
+<tr class="a" id="maxAccessTokenLifetime">
         
 <td style="vertical-align: top;">maxAccessTokenLifetime</td>
         
@@ -387,7 +398,7 @@
         </td>
     </tr>
     
-<tr class="a" id="maxAllowedNewClientRequests">
+<tr class="b" id="maxAllowedNewClientRequests">
         
 <td style="vertical-align: top;">maxAllowedNewClientRequests</td>
         
@@ -403,7 +414,7 @@
         </td>
     </tr>
     
-<tr class="b" id="maxAuthorizationGrantLifetime">
+<tr class="a" id="maxAuthorizationGrantLifetime">
         
 <td style="vertical-align: top;">maxAuthorizationGrantLifetime</td>
         
@@ -420,7 +431,7 @@
         </td>
     </tr>
     
-<tr class="a" id="maxIDTokenLifetime">
+<tr class="b" id="maxIDTokenLifetime">
         
 <td style="vertical-align: top;">maxIDTokenLifetime</td>
         
@@ -437,7 +448,7 @@
         </td>
     </tr>
     
-<tr class="b" id="maxClientRefreshTokenLifetime">
+<tr class="a" id="maxClientRefreshTokenLifetime">
          
 <td style="vertical-align: top;">maxClientRefreshTokenLifetime</td>
          
@@ -453,7 +464,7 @@
          </td>
      </tr>
     
-<tr class="a" id="maxRefreshTokenLifetime">
+<tr class="b" id="maxRefreshTokenLifetime">
         
 <td style="vertical-align: top;">maxRefreshTokenLifetime</td>
         
@@ -467,7 +478,7 @@
         </td>
     </tr>
     
-<tr class="b" id="name">
+<tr class="a" id="name">
         
 <td style="vertical-align: top;">name</td>
         
@@ -480,7 +491,7 @@
         </td>
     </tr>
     
-<tr class="a" id="OIDCEnabled">
+<tr class="b" id="OIDCEnabled">
         
 <td style="vertical-align: top;">OIDCEnabled</td>
         
@@ -496,7 +507,7 @@
         </td>
     </tr>
     
-<tr class="b" id="pingable">
+<tr class="a" id="pingable">
         
 <td style="vertical-align: top;">pingable</td>
         
@@ -512,7 +523,7 @@
     </tr>
 
     
-<tr class="a" id="pollingDirectory">
+<tr class="b" id="pollingDirectory">
         
 <td style="vertical-align: top;">pollingDirectory</td>
         
@@ -528,7 +539,7 @@
         </td>
     </tr>
     
-<tr class="b" id="pollingInterval">
+<tr class="a" id="pollingInterval">
         
 <td style="vertical-align: top;">pollingInterval</td>
         
@@ -542,7 +553,7 @@
     </tr>
 
     
-<tr class="a" id="printTSInDebug">
+<tr class="b" id="printTSInDebug">
         
 <td style="vertical-align: top;">printTSInDebug</td>
         
@@ -558,7 +569,7 @@
     </tr>
 
     
-<tr class="b" id="refreshTokenEnabled">
+<tr class="a" id="refreshTokenEnabled">
         
 <td style="vertical-align: top;">refreshTokenEnabled</td>
         
@@ -574,7 +585,7 @@
         </td>
     </tr>
     
-<tr class="a" id="refreshTokenLifetime">
+<tr class="b" id="refreshTokenLifetime">
         
 <td style="vertical-align: top;">refreshTokenLifetime</td>
         
@@ -586,7 +597,7 @@
         </td>
     </tr>
     
-<tr class="b" id="rfc7636Required">
+<tr class="a" id="rfc7636Required">
         
 <td style="vertical-align: top;">rfc7636Required</td>
         
@@ -601,7 +612,7 @@
         </td>
     </tr>
     
-<tr class="a" id="safe_gc">
+<tr class="b" id="safe_gc">
         
 <td style="vertical-align: top;">safe_gc</td>
         
@@ -617,7 +628,7 @@
         </td>
     </tr>
     
-<tr class="b" id="scheme">
+<tr class="a" id="scheme">
         
 <td style="vertical-align: top;">scheme</td>
         
@@ -633,7 +644,7 @@
         </td>
     </tr>
     
-<tr class="a" id="schemeSpecificPart">
+<tr class="b" id="schemeSpecificPart">
         
 <td style="vertical-align: top;">schemeSpecificPart</td>
         
@@ -646,7 +657,7 @@
         </td>
     </tr>
     
-<tr class="b" id="serverDN">
+<tr class="a" id="serverDN">
         
 <td style="vertical-align: top;">serverDN</td>
         
@@ -662,7 +673,7 @@
     </tr>
 
     
-<tr class="a" id="version">
+<tr class="b" id="version">
         
 <td style="vertical-align: top;">version</td>
         
@@ -793,7 +804,7 @@ units are in <b>seconds</b>. Blanks before and after units are allowed. Acceptab
 </div>
 <div id="footer">
     <div class="xright">&#169;    
-                    2021
+                    2022
         
                     
     

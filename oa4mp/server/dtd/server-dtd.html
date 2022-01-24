@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-10-25
+            Last Published: 2022-01-24
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.3
+                         Version: 5.2.4
             </div>
     <div class="clear">
         <hr/>
@@ -229,25 +229,28 @@
 &lt;!ELEMENT <a href="server-dtd-content-tags.html">permissions</a>&gt;
 &lt;!ELEMENT <a href="server-dtd-content-tags.html">adminClients</a>&gt;
 &lt;!ELEMENT <a href="server-dtd-content-tags.html">txStore</a>&gt;
+&lt;!ELEMENT <a href="server-dtd-content-tags.html">voStore</a>&gt;
 &lt;!ATTLIST clients
     tablename CDATA #IMPLED&gt;
 &lt;!ATTLIST clientApprovals
     tablename CDATA #IMPLIED&gt;
 &lt;!ATTLIST transactions
     tablename CDATA #IMPLIED&gt;
-  &lt;!ATTLIST permissions
-      tablename CDATA #IMPLED&gt;
-  &lt;!ATTLIST clients
-      tablename admiClients #IMPLED&gt;
-    &lt;!ATTLIST clients
-        txStore CDATA #IMPLED&gt;
-&lt;!ELEMENT memoryStore (clients|clientApprovals|transactions|permissions|adminClients|txStore)*&gt;
+&lt;!ATTLIST permissions
+    tablename CDATA #IMPLED&gt;
+&lt;!ATTLIST adminClients
+    tablename admiClients #IMPLED&gt;
+&lt;!ATTLIST txStore
+    txStore CDATA #IMPLED&gt;
+&lt;!ATTLIST voStore
+    voStore CDATA #IMPLED&gt;
+&lt;!ELEMENT memoryStore (clients|clientApprovals|transactions|permissions|adminClients|txStore|voStore)*&gt;
     &lt;!ELEMENT <a href="../../common/configuration/file-store.html">fileStore</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore)*&gt;
 &lt;!ATTLIST <a href="../../common/configuration/file-store.html">fileStore</a>
     dataPath CDATA #IMPLIED
     indexPath CDATA #IMPLIED
     path CDATA #IMPLIED&gt;
-&lt;!ELEMENT <a href="../../common/configuration/mysql-store.html">mysql</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore)*&gt;
+&lt;!ELEMENT <a href="../../common/configuration/mysql-store.html">mysql</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore|voStore)*&gt;
 &lt;!ATTLIST <a href="../../common/configuration/mysql-store.html">mysql</a>
     password CDATA #REQUIRED
     port CDATA #IMPLIED
@@ -258,14 +261,14 @@
     tablename CDATA #IMPLIED
     tablePrefix CDATA #IMPLIED
     driver CDATA #IMPLIED&gt;
-    &lt;!ELEMENT <a href="../../common/configuration/derby-store.html">derby</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore)*&gt;
+    &lt;!ELEMENT <a href="../../common/configuration/derby-store.html">derby</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore|voStore)*&gt;
     &lt;!ATTLIST <a href="../../common/configuration/derby-store.html">derby</a>
         password CDATA #REQUIRED
         username CDATA #REQUIRED
         bootPassword CDATA #REQIRED
         database CDATA #REQUIRED
         schema CDATA #IMPLIED&gt;
-&lt;!ELEMENT <a href="../../common/configuration/mariadb-store.html">mariadb</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore)*&gt;
+&lt;!ELEMENT <a href="../../common/configuration/mariadb-store.html">mariadb</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore|voStore)*&gt;
 &lt;!ATTLIST <a href="../../common/configuration/mariadb-store.html">mariadb</a>
     password CDATA #REQUIRED
     port CDATA #IMPLIED
@@ -537,7 +540,7 @@
 </div>
 <div id="footer">
     <div class="xright">&#169;    
-                    2021
+                    2022
         
                     
     

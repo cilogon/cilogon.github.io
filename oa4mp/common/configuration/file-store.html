@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2021-10-25
+            Last Published: 2022-01-24
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.3
+                         Version: 5.2.4
             </div>
     <div class="clear">
         <hr/>
@@ -172,20 +172,7 @@ any needed subdirectories.
             one.
         </td>
     </tr>
-    
-<tr class="b">
-        
-<td style="vertical-align: top;">dataPath</td>
-        
-<td style="vertical-align: top;">Location of items</td>
-    </tr>
-    
-<tr class="a">
-        
-<td style="vertical-align: top;">indexPath</td>
-        
-<td style="vertical-align: top;">Location of system-built indices.</td>
-    </tr>
+
     
 <tr class="b">
            
@@ -198,7 +185,10 @@ any needed subdirectories.
 
 </table>
 
-<p>Again you specify either the <span style="font-weight: bold;">path</span> or both the <span style="font-weight: bold;">dataPath</span> and <span style="font-weight: bold;">indexPath</span>.</p>
+<p>
+    You <b>must</b> specify  the <span style="font-weight: bold;">path</span>. The effect will be to create (and manage)
+    directories for each store.
+</p>
 
 
 <p>A file-based store system is a great, easy way to set up your storage. It require nothing more than the correct
@@ -221,35 +211,26 @@ any needed subdirectories.
 &lt;/service&gt;
 </pre></div>
 
-<p>This sets up a fully functioning service with local storage and using the default MyProxy service.</p>
+<p>This sets up a fully functioning service with local storage and using the default MyProxy service. This
+would create the following:</p>
 
-</section><section>
-<h3><a name="Example_2."></a>Example 2.</h3>
+<ul>
+    
+<li>/var/www/storage/transactions/dataPath</li>
+    
+<li>/var/www/storage/transactions/indexPath</li>
+    
+<li>/var/www/storage/clients/dataPath</li>
+    
+<li>/var/www/storage/clients/indexPath</li>
+    
+<li>/var/www/storage/clientApprovals/dataPath</li>
+    
+<li>/var/www/storage/clientApprovals/indexPath</li>
+</ul>
 
-
-<p>An alternate version of this would be to specify the data and index paths for each store:</p>
-
-<div>
-<pre>
-&lt;service name=&quot;default&quot; address=&quot;https://myservice.org:8443/oauth&quot;&gt;
-   &lt;fileStore dataPath=&quot;/var/www/storage/transactions/data&quot;
-               indexPath=&quot;/var/www/storage/transactions/index&quot;&gt;
-      &lt;transactions/&gt;
-   &lt;/fileStore&gt;
-   &lt;fileStore dataPath=&quot;/var/www/storage/clients/data&quot;
-               indexPath=&quot;/var/www/storage/clients/index&quot;&gt;
-      &lt;clients/&gt;
-   &lt;/fileStore&gt;
-   &lt;fileStore dataPath=&quot;/var/www/storage/clientApprovals/data&quot;
-               indexPath=&quot;/var/www/storage/clientApprovals/index&quot;&gt;
-      &lt;clientApprovals/&gt;
-   &lt;/fileStore&gt;
-&lt;/service&gt;
-</pre></div>
-
-    This is equivalent to the first example.
 </section></section><section>
-<h2><a name="Client_examples"></a>Client examples</h2>
+<h2><a name="A_client_example"></a>A client example</h2>
 <section>
 <h3><a name="Using_a_file_store_in_a_client"></a>Using a file store in a client</h3>
 A client file store can be applied to
@@ -277,7 +258,7 @@ This makes the asset store in the given directory. This will not remove empty fi
 </div>
 <div id="footer">
     <div class="xright">&#169;    
-                    2021
+                    2022
         
                     
     
