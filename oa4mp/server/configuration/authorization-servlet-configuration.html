@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-01-24
+            Last Published: 2022-03-22
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.4
+                         Version: 5.2.5
             </div>
     <div class="clear">
         <hr/>
@@ -172,6 +172,47 @@
     
 <tr class="b">
         
+<td>useProxy</td>
+        
+<td>N</td>
+        
+<td>false</td>
+        
+<td>Valid values are &quot;true&quot; or &quot;false&quot;.
+            This flag determines whether or not to use a proxy for authorization. <br />
+            See also cfgFile and cfgName
+        </td>
+    </tr>
+    
+<tr class="a">
+        
+<td>cfgFile</td>
+        
+<td>N</td>
+        
+<td></td>
+        
+<td>This is required if <b>useProxy</b> is true and ignored otherwise. This is the path
+            to the <a class="externalLink" href="https://cilogon.github.io/oa4mp/client/configuration/index.html">
+                client configuration</a> file.
+        </td>
+    </tr>
+    
+<tr class="b">
+        
+<td>cfgName</td>
+        
+<td>N</td>
+        
+<td></td>
+        
+<td>This is required if <b>useProxy</b> is true and ignored otherwise.
+            The name of the configuration within the cfgFile to use.
+        </td>
+    </tr>
+    
+<tr class="a">
+        
 <td>useHeader</td>
         
 <td>N</td>
@@ -184,7 +225,7 @@
     </tr>
 
     
-<tr class="a">
+<tr class="b">
         
 <td>requireHeader</td>
         
@@ -197,7 +238,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td>headerFieldName</td>
         
@@ -210,7 +251,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="b">
         
 <td>returnDNAsUsername</td>
         
@@ -224,7 +265,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td>convertDNToGlobusID</td>
         
@@ -244,7 +285,30 @@
 </table>
 
 <section>
-<h3><a name="An_Example"></a>An Example</h3>
+<h3><a name="An_Example_of_using_a_proxy"></a>An Example of using a proxy</h3>
+
+<div>
+<pre>
+&lt;config&gt;
+   &lt;server name=&quot;my-config&quot;&gt;
+      &lt;authorizationServlet useProxy=&quot;true&quot;
+           cfgFile=&quot;/opt/oa4mp/etc/clients.xml&quot;&gt;
+           cfgName=&quot;cilogon-proxy&quot;&gt;
+      &lt;!-- rest of config --&gt;
+   &lt;\server&gt;
+&lt;\config&gt;
+</pre></div>
+
+<p>
+    In this case, there is a service configured (you have registered a client with it)
+    and you need to have calls for authorization forwarded to it. All you need to do
+    is ensure the configuration in the file is correct and that your Tomcat web.xml
+    file is set right and you are good to go. See more at
+    <a href="../manuals/using-proxies.xhtml.xhtml">using prooxies</a>
+</p>
+
+</section><section>
+<h3><a name="An_Example_of_using_remote_user"></a>An Example of using remote user</h3>
 
 <div>
 <pre>
@@ -263,7 +327,7 @@ be shown to the user along with client information and the user will be prompted
 <h3><a name="Use_cases"></a>Use cases</h3>
 There are three main use cases which should be discussed in more depth. The particulars of how to configure
 and authorization module are best dealt with elsewhere and a discussion can be found
-<a href="../manuals/remote-user.html">here</a>.
+<a href="../manuals/remote-user.xhtml">here</a>.
 <section>
 <h4><a name="Using_the_OA4MP_authorization_module"></a>Using the OA4MP authorization module</h4>
 

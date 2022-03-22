@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-01-24
+            Last Published: 2022-03-22
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.4
+                         Version: 5.2.5
             </div>
     <div class="clear">
         <hr/>
@@ -236,16 +236,17 @@
     tablename CDATA #IMPLIED&gt;
 &lt;!ATTLIST transactions
     tablename CDATA #IMPLIED&gt;
-&lt;!ATTLIST permissions
-    tablename CDATA #IMPLED&gt;
-&lt;!ATTLIST adminClients
-    tablename admiClients #IMPLED&gt;
-&lt;!ATTLIST txStore
-    txStore CDATA #IMPLED&gt;
-&lt;!ATTLIST voStore
-    voStore CDATA #IMPLED&gt;
+  &lt;!ATTLIST permissions
+      tablename CDATA #IMPLED&gt;
+  &lt;!ATTLIST adminClients
+      tablename #IMPLED&gt;
+  &lt;!ATTLIST txStore
+       tablename CDATA #IMPLED&gt;
+  &lt;!ATTLIST voStore
+      tablename CDATA #IMPLED&gt;
+
 &lt;!ELEMENT memoryStore (clients|clientApprovals|transactions|permissions|adminClients|txStore|voStore)*&gt;
-    &lt;!ELEMENT <a href="../../common/configuration/file-store.html">fileStore</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore)*&gt;
+    &lt;!ELEMENT <a href="../../common/configuration/file-store.html">fileStore</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore|voStore)*&gt;
 &lt;!ATTLIST <a href="../../common/configuration/file-store.html">fileStore</a>
     dataPath CDATA #IMPLIED
     indexPath CDATA #IMPLIED
@@ -279,7 +280,7 @@
     tablename CDATA #IMPLIED
     tablePrefix CDATA #IMPLIED
     driver CDATA #IMPLIED&gt;
-&lt;!ELEMENT <a href="../../common/configuration/postgres-store.html">postgresql</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore)*&gt;
+&lt;!ELEMENT <a href="../../common/configuration/postgres-store.html">postgresql</a> (clients|clientApprovals|transactions|permissions|adminClients|txStore|voStore)*&gt;
 &lt;!ATTLIST <a href="../../common/configuration/postgres-store.html">postgresql</a>
     username CDATA #REQUIRED
     password CDATA #REQUIRED

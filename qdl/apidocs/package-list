@@ -13,9 +13,11 @@ edu.uiuc.ncsa.qdl.generated
 edu.uiuc.ncsa.qdl.ini_generated
 edu.uiuc.ncsa.qdl.install
 edu.uiuc.ncsa.qdl.module
+edu.uiuc.ncsa.qdl.module.legacy
 edu.uiuc.ncsa.qdl.parsing
 edu.uiuc.ncsa.qdl.scripting
 edu.uiuc.ncsa.qdl.state
+edu.uiuc.ncsa.qdl.state.legacy
 edu.uiuc.ncsa.qdl.statements
 edu.uiuc.ncsa.qdl.util
 edu.uiuc.ncsa.qdl.variables
