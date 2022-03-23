@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-03-22
+            Last Published: 2022-03-23
                                 </div>
                 <div class="xright">            
     
@@ -150,15 +150,16 @@
    The authorization module for OA4MP can be replaced by various means, such as using Tomcat's built in
     management. However, this means that you will need to have separate logins that you manage for each
     user. Another option is using a <i>proxy</i> service. This is an OIDC service that allows for logins.
-    Your OS4MP can simply forward all requests to that service (inclding the device flow) and if the
-    service allowing your users to effectively log in there.
+    Your OA4MP can simply forward all requests to that service (including the device flow) and use the
+    service, allowing your users to effectively log in there. In short, it allows some other service to
+    do all your used management.
 </p>
 
 </section><section>
 <h2><a name="How_does_this_do_it.3F"></a>How does this do it?</h2>
 
 <p>
-    You need to register a client with the proxy service (hencefroth known as <b>the proxy</b>), then enable
+    You need to register a client with the proxy service (henceforth known as <b>the proxy</b>), then enable
     using proxies in your server configuration (see below). Since the service is a client of the proxy,
     you need to enable the callback servlet and register that as the callback.
 </p>
@@ -169,8 +170,9 @@
 <h4><a name="The_Tomcat_deployment_descriptor_.28web.xml.29"></a>The Tomcat deployment descriptor (web.xml)</h4>
 
 <p>
-    There is an included web.xml file, called <b>proxy.xml</b> that has a complete setup. Copy that over your web.xml
-    file. The major point is that it enables the callback servlet (with endpoint <b>ready</b>) at
+    There is an included web.xml file, called <b>proxy.xml</b> that has a complete setup.
+    Copy that over your web.xml file. The major point is that it enables the
+    callback servlet (with endpoint <b>ready</b>) at
 </p>
 
 <div>
@@ -182,7 +184,8 @@
 <pre>https://host:port/oauth2/ready</pre></div>
 
 <p>in a standard install. Key points are that https should be available, and that your server
-    should be at host:port. </p>
+    should be at host:port. The proxy must be able to contact your callback endpoint securely,
+    so self-signed certs hould be avoided unless you have a specific agreement with the proxy.</p>
 
 </section><section>
 <h4><a name="The_server_configuration_proper"></a>The server configuration proper</h4>
@@ -203,8 +206,46 @@
                         /&gt;
 </pre></div>
 
+</section></section></section><section>
+<h2><a name="Using_the_results"></a>Using the results</h2>
 
-</section></section></section>
+<p>
+    When your service contacts the proxy, a complete exchange is done including getting any
+    claims from the proxy. This means that these are available for your service to harvest.
+    The system will always set the subject to the subject returned by the proxy. You may
+    configure a list of other claims from the proxy to be returned. This is done in the
+    proxy_claims_list property of the client. The options there are
+</p>
+
+<ul>
+    
+<li>* = (an asterisk) pass along all claims</li>
+    
+<li>[claim0,claim1,...] = list of specific claims. Note that putting * in this list
+    will simply return all claims.</li>
+</ul>
+
+<p>
+    So if the proxy returns the following claims
+</p>
+
+<div>
+<pre>
+    {&quot;sub&quot;:&quot;user_123&quot;,
+     &quot;idp&quot;:&quot;https:shibboleth.big_state.edu&quot;,
+     &quot;is_member_of&quot;:[&quot;admin&quot;,&quot;all-users&quot;,&quot;admin-phys&quot;]
+    }
+</pre></div>
+
+<p>
+    Then at the least the the server returns the &quot;sub&quot; claim. If you set the client's
+    proxy_claims_list
+    to do so, you may also return the idp or is_member_of claim.  If you set
+    the proxy_claims_list to be &quot;*&quot; then all the claims will be passed along.
+</p>
+
+
+</section>
 
     </div>
 </div>
