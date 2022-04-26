@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-03-23
+            Last Published: 2022-04-26
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.5
+                         Version: 5.2.6
             </div>
     <div class="clear">
         <hr/>
@@ -145,6 +145,31 @@
 <p>Changes to the OA4MP server by version.</p>
 
 <section>
+<h2><a name="a5.2.6"></a>5.2.6</h2>
+
+<p>Release date 2022-05-10</p>
+
+<ul>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1221">CIL-1221</a>:Add proxy_claims_list attributes support
+    to the client management endpoint.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1225">CIL-1225</a>:Prevent mail util from throwing an exception
+    in certain cases if mail has been completely disabled.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1253">CIL-1253</a>:introspect endpoint should not
+    require token_type_hint.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1267">CIL-1267</a>:fail_on_error inLDAP configurations
+        not getting passed along consistently.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1268">CIL-1268</a>: More graceful recovery from certain types
+        of errors. If, for instance, a client's LDAP is misconfigured, token operations (such as refresh) will fail, but
+    can be resumed rather than invalidating the flow.</li>
+
+</ul>
+
+</section><section>
 <h2><a name="a5.2.5"></a>5.2.5</h2>
 
 <p>Release date 2022-03-29</p>
