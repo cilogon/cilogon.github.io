@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-04-26
+            Last Published: 2022-07-06
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.6
+                         Version: 5.2.7
             </div>
     <div class="clear">
         <hr/>
@@ -222,7 +222,9 @@
 <li>* = (an asterisk) pass along all claims</li>
     
 <li>[claim0,claim1,...] = list of specific claims. Note that putting * in this list
-    will simply return all claims.</li>
+    will simply return all claims.<b>except</b> audience, issuer, issued at, expiration
+    because these must come from the current server, not the proxy (or any consumer of the
+    id token must reject it.)</li>
 </ul>
 
 <p>
@@ -241,7 +243,7 @@
     Then at the least the the server returns the &quot;sub&quot; claim. If you set the client's
     proxy_claims_list
     to do so, you may also return the idp or is_member_of claim.  If you set
-    the proxy_claims_list to be &quot;*&quot; then all the claims will be passed along.
+    the proxy_claims_list to be &quot;*&quot; then all relevant the claims will be passed along.
 </p>
 
 

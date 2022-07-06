@@ -73,6 +73,7 @@ edu.uiuc.ncsa.myproxy.oa4mp.loader
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.functor
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.functor.claims
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage
+edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.transactions
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.df
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.tx
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.clients

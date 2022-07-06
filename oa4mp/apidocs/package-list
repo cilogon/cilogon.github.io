@@ -25,6 +25,7 @@ edu.uiuc.ncsa.myproxy.oa4mp.oauth2.state
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.clients
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.df
+edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.transactions
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.tx
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.storage.vo
 edu.uiuc.ncsa.myproxy.oa4mp.oauth2.tokens
