@@ -29,7 +29,7 @@
                                                                     <img src="../../css/images/ncsalogo_sm-2.gif" alt="NCSA"/>
         
                 </a>
-                                    <a href="../" id="bannerRight"  >
+                                    <a href="http://grid.ncsa.illinois.edu/myproxy/" id="bannerRight"  >
         
                                                                     <img src="../../css/images/MyProxyWide.gif" alt="MyProxy"/>
         
@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-07-08
+            Last Published: 2022-09-19
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.7.1
+                         Version: 5.2.8
             </div>
     <div class="clear">
         <hr/>
@@ -98,9 +98,6 @@
                     
                             
                                         
-                                    
-                                    
-                                    
                                     
                                     
                             
@@ -154,12 +151,13 @@
 
 <ul>
     
-<li>Tomcat 6 or 7. SSL should be configured and enabled.</li>
+<li>Tomcat 9 or above. SSL should be configured and enabled. Tomcat 8 will no longer work with the
+    compiler version of Java (11 or above) we are using.</li>
     
-<li>Java <b>1.8</b> or above. Only the Oracle VM is officially supported. Do not use OpenJDK. Note that versions previous
+<li>Java <b>1.9</b> or above. Note that versions previous
     to Java 1.7 will not work due to internal changes by Sun to their security APIs.</li>
     
-<li>(Optional) Maven 3.0+ or higher (only if building from the source)</li>
+<li>(Optional) Maven 3.3+ or higher (only if building from the source)</li>
     
 <li>(Optional) Apache 2, configured to work with Tomcat.</li>
 </ul>
@@ -168,15 +166,7 @@
 
 
 <p>You may most easily a bare-bones version for testing by downloading the current reference war:</p>
-<section><section><section>
-<h5><a name="OAuth_1.0a"></a>OAuth 1.0a</h5>
 
-<p><a class="externalLink" href="https://svn.code.sf.net/p/cilogon/code/tags/latest/client/client.war" title="OA4MP client war">client.war</a>
-     <br /></br>
-      <a class="externalLink" href="https://svn.code.sf.net/p/cilogon/code/tags/latest/client/client.war.asc" title="PGP signature file">(PGP signature)</a>
-</p>
-</section><section>
-<h5><a name="OAuth_2.0"></a>OAuth 2.0</h5>
 
 <p><a class="externalLink" href="https://github.com/ncsa/OA4MP/releases/latest/client2.war" title="OA4MP client war">client2.war</a>
      <br /></br>
@@ -190,7 +180,7 @@ For many cases, this is all you need to do.
     $CATALINA_HOME/webapps directory. The system will not work until you have configured it then registered with an
     OA4MP server though.</p>
 
-</section></section></section></section><section>
+</section><section>
 <h2><a name="Using_the_Maven_Repository"></a>Using the Maven Repository</h2>
 Fortunately, OA4MP is hosted on the public Sonatype maven repository so that using the code simply requires you
 add the right dependencies. There is no need to configure any repositories. Generally it is suggested that you
@@ -199,44 +189,27 @@ use the pre-compiled war.
 <section>
 <h3><a name="Getting_and_building_the_source"></a>Getting and building the source</h3>
 If you need/want to customize the basic package, you would download the source from
-<a class="externalLink" href="https://github.com/ncsa/OA4MP" title="oa4mp oauth 1.0a sources">Git Hub</a>
+<a class="externalLink" href="https://github.com/ncsa/OA4MP" title="oa4mp sources">Git Hub</a>
 This will resolve the correct dependencies. Build the module you want by issuing
 
 <div>
 <pre>mvn clean install</pre></div>
 and you should end up with a deployable war.
 
-<section><section>
-<h5><a name="OAuth_1.0a"></a>OAuth 1.0a</h5>
 
-<p>If you decide to write your own OAuth 1.0a webapp, you should use the following module:</p>
-
-<div>
-<pre>
-    &lt;dependency&gt;
-        &lt;artifactId&gt;oa4mp-client-oauth1&lt;/artifactId&gt;
-        &lt;groupId&gt;edu.uiuc.ncsa.myproxy&lt;/groupId&gt;
-        &lt;version&gt;4.3&lt;/version&gt;
-    &lt;/dependency&gt;
-</pre></div>
-
-
-</section><section>
-<h5><a name="OAuth_2.0"></a>OAuth 2.0</h5>
-
-<p>If you decide to write your own OAuth 2.0 webapp, you should use the following module:</p>
+<p>If you decide to write your own OA4MP webapp, you should use the following module:</p>
 
 <div>
 <pre>
     &lt;dependency&gt;
         &lt;artifactId&gt;oa4mp-client-oauth2&lt;/artifactId&gt;
         &lt;groupId&gt;edu.uiuc.ncsa.myproxy&lt;/groupId&gt;
-        &lt;version&gt;4.3&lt;/version&gt;
+        &lt;version&gt;5.2.8&lt;/version&gt;
     &lt;/dependency&gt;
 </pre></div>
 
 
-</section></section></section></section><section>
+</section></section><section>
 <h2><a name="Deploying_to_Apache"></a>Deploying to Apache</h2>
 
 

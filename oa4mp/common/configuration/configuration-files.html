@@ -29,7 +29,7 @@
                                                                     <img src="../../css/images/ncsalogo_sm-2.gif" alt="NCSA"/>
         
                 </a>
-                                    <a href="../" id="bannerRight"  >
+                                    <a href="http://grid.ncsa.illinois.edu/myproxy/" id="bannerRight"  >
         
                                                                     <img src="../../css/images/MyProxyWide.gif" alt="MyProxy"/>
         
@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-07-08
+            Last Published: 2022-09-19
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.7.1
+                         Version: 5.2.8
             </div>
     <div class="clear">
         <hr/>
@@ -98,9 +98,6 @@
                     
                             
                                         
-                                    
-                                    
-                                    
                                     
                                     
                             
@@ -204,9 +201,7 @@
         
 <th>Parameter</th>
         
-<th>OAuth 1.0a</th>
-        
-<th>OAuth 2.0</th>
+<th>Value</th>
     </tr>
     
 <tr class="b">
@@ -215,16 +210,12 @@
         
 <td>file</td>
         
-<td>oa4mp:client.config.file</td>
-        
 <td>oa4mp:oauth2.client.config.file</td>
     </tr>
     
 <tr class="a">
         
 <td>name</td>
-        
-<td>oa4mp:client.config.name</td>
         
 <td>oa4mp:oauth2.client.config.name</td>
     </tr>
@@ -235,8 +226,6 @@
         
 <td>file</td>
         
-<td>oa4mp:server.config.file</td>
-        
 <td>oa4mp:oauth2.server.config.file</td>
     </tr>
     
@@ -244,24 +233,22 @@
         
 <td>name</td>
         
-<td>oa4mp:server.config.name</td>
-        
 <td>oa4mp:oauth2.server.config.name</td>
     </tr>
 </table>
 <section>
-<h4><a name="A_server_example_for_OAuth_1.0a"></a>A server example for OAuth 1.0a</h4>
+<h4><a name="A_server_example."></a>A server example.</h4>
 This how the the file and name parameters would be specified in the web.xml file:
 
 <div>
 <pre>
 &lt;context-param&gt;
-    &lt;param-name&gt;oa4mp:server.config.file&lt;/param-name&gt;
+    &lt;param-name&gt;oa4mp:oauth2.server.config.file&lt;/param-name&gt;
     &lt;param-value&gt;/path/to/cfg.xml&lt;/param-value&gt;
 &lt;/context-param&gt;
 
 &lt;context-param&gt;
-    &lt;param-name&gt;oa4mp:server.config.name&lt;/param-name&gt;
+    &lt;param-name&gt;oa4mp:oauth2.server.config.name&lt;/param-name&gt;
     &lt;param-value&gt;default&lt;/param-value&gt;
 &lt;/context-param&gt;
 </pre></div>
@@ -300,7 +287,7 @@ server.
 
 </section></section><section>
 <h3><a name="Included_files."></a>Included files.</h3>
-As of OA4MP 1.1, configuration files may now be included in other configuration files. Note that
+Configuration files may now be included in other configuration files. Note that
 
 <ul>
     

@@ -29,7 +29,7 @@
                                                                     <img src="../../css/images/ncsalogo_sm-2.gif" alt="NCSA"/>
         
                 </a>
-                                    <a href="../" id="bannerRight"  >
+                                    <a href="http://grid.ncsa.illinois.edu/myproxy/" id="bannerRight"  >
         
                                                                     <img src="../../css/images/MyProxyWide.gif" alt="MyProxy"/>
         
@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-07-08
+            Last Published: 2022-09-19
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.7.1
+                         Version: 5.2.8
             </div>
     <div class="clear">
         <hr/>
@@ -98,9 +98,6 @@
                     
                             
                                         
-                                    
-                                    
-                                    
                                     
                                     
                             
@@ -172,7 +169,7 @@
         
 <td style="vertical-align: top;">ServiceUri + /token</td>
         
-<td style="vertical-align: top;">(OAuth 1.0a and <span style="background-color: #ff6600;">OAuth 2</span>.)
+<td style="vertical-align: top;">
             The address which the client should use for getting
             the access token. Normally
             this is constructed from the serviceUri and should only be set explicitly by the server administrator
@@ -188,7 +185,7 @@
         
 <td style="vertical-align: top;">ServiceUri + /getcert</td>
         
-<td style="vertical-align: top;">(OAuth 1.0a and <span style="background-color: #ff6600;">OAuth 2</span>.) The address
+<td style="vertical-align: top;">The address
             from which the client will get the certificate. Normally
             this is constructed from the serviceUri and should only be set explicitly by the server administrator
             if needed.
@@ -203,7 +200,7 @@
         
 <td style="vertical-align: top;">ServiceUri + /authorize</td>
         
-<td style="vertical-align: top;">(OAuth 1.0a and <span style="background-color: #ff6600;">OAuth 2</span>.) The address
+<td style="vertical-align: top;">The address
             which the client should use for authorization. Normally
             this is constructed from the serviceUri and should only be set explicitly by the server administrator
             if needed.
@@ -231,7 +228,7 @@
         
 <td style="vertical-align: top;">ServiceUri + /device_authorization</td>
         
-<td style="vertical-align: top;">(<span style="background-color: #ff6600;">OAuth 2</span> only) The address
+<td style="vertical-align: top;">The address
             which the client should use for initiating the device authorization flow (RFC 8628). Normally
             this is constructed from the serviceUri and should only be set explicitly by the server administrator
             if needed.
@@ -264,21 +261,6 @@
     
 <tr class="a">
         
-<td style="vertical-align: top;">initiateUri</td>
-        
-<td style="vertical-align: top;">Y</td>
-        
-<td style="vertical-align: top;">ServiceUri + /initiate</td>
-        
-<td style="vertical-align: top;">(OAuth 1.0a only.) The address which the client should use for the
-            first leg of the interaction. Normally
-            this is constructed from the serviceUri and should only be set explicitly by the server administrator
-            if needed.
-        </td>
-    </tr>
-    
-<tr class="b">
-        
 <td style="vertical-align: top;">keypairLifetime</td>
         
 <td style="vertical-align: top;">N</td>
@@ -295,7 +277,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="b">
         
 <td style="vertical-align: top;">lifetime</td>
         
@@ -308,7 +290,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td style="vertical-align: top;">maxAssetLifetime</td>
         
@@ -323,35 +305,9 @@
         </td>
     </tr>
 
-    
-<tr class="a">
-        
-<td style="vertical-align: top;">privateKeyFile</td>
-        
-<td style="vertical-align: top;">Y</td>
-        
-<td style="vertical-align: top;">N/A</td>
-        
-<td style="vertical-align: top;">Used by OAuth 1.0a based clients and servers. The full path to the client's pk8
-            encoded private key.
-        </td>
-    </tr>
+
     
 <tr class="b">
-        
-<td style="vertical-align: top;">publicKeyFile</td>
-        
-<td style="vertical-align: top;">Y</td>
-        
-<td style="vertical-align: top;">N/A</td>
-        
-<td style="vertical-align: top;">Used by OAuth 1.0a based clients and servers. The full path to the client's pem
-            encoded public key. This was uploaded to the
-            server at registration time.
-        </td>
-    </tr>
-    
-<tr class="a">
         
 <td style="vertical-align: top;">secret</td>
         
@@ -359,14 +315,14 @@
         
 <td style="vertical-align: top;">N/A</td>
         
-<td style="vertical-align: top;"><span style="background-color: #ff6600;">OAuth 2</span> specific. The
+<td style="vertical-align: top;">The
             secret that is given to the client at registration. This should be cut and pasted with no blanks or other
             characters into the configuration file. Note that the server does not store this! It will only store
             a hash of it so if you lose it, you must re-register.
         </td>
     </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td style="vertical-align: top;">serviceUri</td>
         
@@ -377,7 +333,7 @@
 <td style="vertical-align: top;">The address of the service this client uses.</td>
     </tr>
     
-<tr class="a">
+<tr class="b">
         
 <td style="vertical-align: top;">showRedirectPage</td>
         
@@ -392,7 +348,7 @@
         </td>
     </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td style="vertical-align: top;">skin</td>
         
@@ -406,7 +362,7 @@
         </td>
     </tr>
     
-<tr class="a">
+<tr class="b">
          
 <td style="vertical-align: top;">userInfoUri</td>
          
@@ -414,14 +370,14 @@
          
 <td style="vertical-align: top;">ServiceUri + /userinfo</td>
          
-<td style="vertical-align: top;">(<span style="background-color: #ff6600;">OAuth 2</span> only.) The address
+<td style="vertical-align: top;">The address
              from which the client will get user information. Normally
              this is constructed from the serviceUri and should only be set explicitly by the server administrator
              if needed.
          </td>
      </tr>
     
-<tr class="b">
+<tr class="a">
         
 <td style="vertical-align: top;">wellKnownUri</td>
         
@@ -439,38 +395,7 @@
     requirement that the requested lifetime be honored.</p>
 
 <section>
-<h3><a name="Example_1._A_standard_configuration_for_an_OAuth_1.0a-based_client"></a>Example 1. A standard configuration for an OAuth 1.0a-based client</h3>
-
-<div>
-<pre>
-&lt;config&gt;
-   &lt;client&gt;
-      &lt;callbackUri&gt;http://client.example.org/client/ready&lt;/callbackUri&gt;
-      &lt;privateKeyFile&gt;/var/www/config/security/oauth-privkey.pk8&lt;/privateKeyFile&gt;
-      &lt;publicKeyFile&gt;/var/www/config/security/oauth-pubkey.pem&lt;/publicKeyFile&gt;
-      &lt;serviceUri&gt;https://server.example.org/oauth&lt;/serviceUri&gt;
-      &lt;lifetime&gt;864000&lt;/lifetime&gt;
-      &lt;keypairLifetime&gt;0&lt;/keypairLifetime&gt;
-      &lt;id&gt;myproxy:delegation,2011:/client/7f1105e2728871223445cafe&lt;/id&gt;
-      &lt;<a href="storage.html">fileStore</a> path=&quot;/path/to/asset/store/&quot;&gt;
-          &lt;assetStore/&gt;
-      &lt;/fileStore&gt;
-      &lt;enableAssetCleanup&gt;true&lt;/enableAssetCleanup&gt;
-      &lt;maxAssetLifetime&gt;865000&lt;/maxAssetLifetime&gt;
-   &lt;/client&gt;
-&lt;/config&gt;
-</pre></div>
-
-<p>The certificate lifetime is specified to 864000 seconds (10 days). The file system will be used for assets
-    and the system will automatically cleanup old entries that are more than 865000 seconds (a wee bit more than 10
-    days)
-    old. The keypairLifetime set to zero means each certification request will have a new keypair generated for it.
-    Please note that the <a href="storage.html">fileStore</a> does require some specific configuration
-    based on your installation.
-</p>
-
-</section><section>
-<h3><a name="Example_2._A_standard_configuration_for_an_OAuth_2.0-based_client"></a>Example 2. A standard configuration for an OAuth 2.0-based client</h3>
+<h3><a name="Example._A_standard_client_configuration."></a>Example. A standard client configuration.</h3>
 
 <div>
 <pre>

@@ -1,1 +1,1 @@
-/usr/java/jdk1.8.0_231/jre/../bin/javadoc @options @packages
+/usr/lib/jvm/java-11-openjdk-amd64/bin/javadoc @options @packages
