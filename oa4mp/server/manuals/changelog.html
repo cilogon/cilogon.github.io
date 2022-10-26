@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-09-19
+            Last Published: 2022-10-26
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.8
+                         Version: 5.2.8.2
             </div>
     <div class="clear">
         <hr/>
@@ -141,9 +141,9 @@
 
 <p>Changes to the OA4MP server by version.</p>
 <section>
-<h2><a name="a5.2.8"></a>5.2.8</h2>
+<h2><a name="a5.2.8.2"></a>5.2.8.2</h2>
 
-<p>Release date 2022-09-20</p>
+<p>Release date 2022-11-04</p>
 
 <ul>
     
@@ -167,7 +167,8 @@
         <a href="driver-config.html">driver script.</a></li>
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1342">CIL-1342</a>: Custom redirects added in cases of error. QDL supports
-    throwing an error now and returning a custom redirect so that it can tell OA4MP where to send the user.</li>
+    throwing an basic error now, a specific OAuth 2 error and a CILogon specific error in the course of running
+        server scripts.</li>
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1346">CIL-1346</a>: Certain returned errors in CILogon were not OAuth 2 compliant.</li>
     
@@ -191,11 +192,30 @@
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1464">CIL-1464</a>: Disable clipboard use by Command Line Client when used
         as a proxy.</li>
-
-
-
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1490">CIL-1490</a>: Scope matching for templates was too simple-minded, assuming every scope was
+    a uri or ignored. With scopes like compute.modify, better matching is needed.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1493">CIL-1493</a>: Remove non standard cid claim in SciTokens.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1498">CIL-1498</a>: is_defined failing on stem elements in QDL.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1507">CIL-1507</a>: Simplify setting cfg attribute in the CLI.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1518">CIL-1518</a>: Simplify setting cfg attribute in the CLI.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1536">CIL-1536</a>: Modernize interface between token exchange and QDL.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1538">CIL-1538</a>: Preserve debug_on flag in client when using the REST API.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1541">CIL-1541</a>: Multiple scripts in a token handler only have very first one run.
+        Run all in sequence.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/1">QDL issue 1</a>: starts_with not processing sparse lists.</li>
 
 </ul>
+
+<p>Note that QDL issues now have a new system for tracking them directly and hence start with 1.</p>
 
 </section><section>
 <h2><a name="a5.2.7"></a>5.2.7</h2>
