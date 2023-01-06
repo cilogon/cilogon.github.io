@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2022-10-26
+            Last Published: 2023-01-06
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.8.2
+                         Version: 5.2.8.3
             </div>
     <div class="clear">
         <hr/>
@@ -141,7 +141,7 @@
 
 <p>Changes to the OA4MP server by version.</p>
 <section>
-<h2><a name="a5.2.8.2"></a>5.2.8.2</h2>
+<h2><a name="a5.2.8.3"></a>5.2.8.3</h2>
 
 <p>Release date 2022-11-04</p>
 
@@ -150,6 +150,8 @@
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-627">CIL-627</a>: Migrate to Java 11, split off MyProxy code.</li>
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-630">CIL-630</a>: Retire CILogon archived user table.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-869">CIL-869</a>:  Documentation for dynamic client registration additional attributes.</li>
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1014">CIL-1014</a>: Explicit creation of memory stores does not work.</li>
     
@@ -176,6 +178,8 @@
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1348">CIL-1348</a>: Debug print for clients with custom short IDs did not work right,
         resulting in an error rather than a log entry.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1354">CIL-1354</a>: Remove OAuth 1 references from documentation.</li>
     
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1366">CIL-1366</a>: exec_phase post_all was not working.</li>
     
@@ -212,7 +216,34 @@
 <li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1541">CIL-1541</a>: Multiple scripts in a token handler only have very first one run.
         Run all in sequence.</li>
     
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1550">CIL-1550</a>: Java serialization issue with OA4MP managed claim sources. Fix is
+    to quit using java serialization completely.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1553">CIL-1553</a>: Allows specifying subtree search scope in QDL.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1553">CIL-1556</a>: Improved online documentation to the CLI.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1582">CIL-1582</a>: Really badly formed post to token endpoint should return status of 400.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1584">CIL-1584</a>: Improve handling of scopes sent to proxy server.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/44">OA4MP issue 44</a>: Dynamic query of clients is documented <a href="dynamic-client-registration.html">here</a>.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/81">OA4MP issue 81</a>: Clients that upload a string of scopes to the CM endpoint should get back a string, not a JSON array.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/84">OA4MP issue 84</a>: Client Management API should return code 201 not 200 on create.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/84">OA4MP issue 85</a>: Improve RFC 7591 compliance.</li>
+    
 <li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/1">QDL issue 1</a>: starts_with not processing sparse lists.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/2">QDL issue 2</a>: diff function for stems added.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/3">QDL issue 3</a>: args() added to replace script_args().</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/4">QDL issue 4</a>: allows stem called state. to be returned with raise_error().</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/5">QDL issue 5</a>: Input form of empty stem is incorrect.</li>
 
 </ul>
 
@@ -1491,7 +1522,7 @@ By and large the major innovation in 5.2.0 and above is support for RFC 8628 -- 
 </div>
 <div id="footer">
     <div class="xright">&#169;    
-                    2022
+                    2023
         
                     
     
