@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2023-01-06
+            Last Published: 2023-02-28
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.8.3
+                         Version: 5.2.9.0
             </div>
     <div class="clear">
         <hr/>
@@ -141,9 +141,40 @@
 
 <p>Changes to the OA4MP server by version.</p>
 <section>
+<h2><a name="a5.2.9"></a>5.2.9</h2>
+
+<p>Release date 2023-03-07</p>
+
+<ul>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1266">CIL-1266</a>: Allow grace period on refresh.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1379">CIL-1379</a>: Revision of documentation for using self-signed cert with Tomcat 9+.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1604">CIL-1604</a>: Incorporate various fixes from the RCAuth group.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1608">CIL-1608</a>: Store the id token in the client's asset, rather than forcing the client to reget it.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1625">CIL-1625</a>: Expired auth grant giving wrong error message.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1629">CIL-1629</a>: Allow more units in configuration: hours and days are now supported.</li>
+    
+<li><a class="externalLink" href="https://jira.ncsa.illinois.edu/browse/CIL-1639">CIL-1639</a>: Edge case that the user info endpoint was
+        not returning the right status code or header if a completely bogus bearer token was used.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/6">QDL Issue 6</a>: Document command line switches.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/8">QDL Issue 8</a>: Add a fork function. This is not permitted in server mode.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/9">QDL Issue 9</a>: Add a sleep(ms) function. Mostly this is an iad to testing.</li>
+    
+<li><a class="externalLink" href="https://github.com/ncsa/qdl/issues/10">QDL Issue 10</a>: add optional module supporting various formats such as XML, YAML, HOCON.</li>
+
+</ul>
+</section><section>
 <h2><a name="a5.2.8.3"></a>5.2.8.3</h2>
 
-<p>Release date 2023-01-17</p>
+<p>Release date 2023-02-07</p>
 
 <ul>
     
@@ -232,7 +263,7 @@
 <li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/81">OA4MP issue 81</a>: Clients that upload a string of scopes to the CM endpoint should get back a string, not a JSON array.</li>
     
 <li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/84">OA4MP issue 84</a>: Client Management API should return code 201 not 200 on create.
-    <b>Note: </b> CILogon still returns 200.</li>
+        <b>Note: </b> CILogon still returns 200.</li>
     
 <li><a class="externalLink" href="https://github.com/ncsa/OA4MP/issues/84">OA4MP issue 85</a>: Improve RFC 7591 compliance.</li>
     

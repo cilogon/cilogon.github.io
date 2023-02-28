@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2023-01-06
+            Last Published: 2023-02-28
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.8.3
+                         Version: 5.2.9.0
             </div>
     <div class="clear">
         <hr/>
@@ -645,7 +645,23 @@
         </td>
     </tr>
     
-<tr class="b" id="safe_gc">
+<tr class="b" id="rtGracePeriod">
+        
+<td style="vertical-align: top;">rtGracePeriod</td>
+        
+<td style="vertical-align: top;">N</td>
+        
+<td style="vertical-align: top;">-1</td>
+        
+<td style="vertical-align: top;">For 0 &#x2264; values, this sets the lifetime in seconds of the refresh token on refresh.
+            If the value is 0, this invalidates the token immediately. A value of -1 means to simply let
+            the tokens age with their current lifetimes. Each client may have this set as well which will
+            override the server setting. The client default is to use whatever the server has configured.<br />
+            See note below on units.
+        </td>
+    </tr>
+    
+<tr class="a" id="safe_gc">
         
 <td style="vertical-align: top;">safe_gc</td>
         
@@ -661,7 +677,7 @@
         </td>
     </tr>
     
-<tr class="a" id="scheme">
+<tr class="b" id="scheme">
         
 <td style="vertical-align: top;">scheme</td>
         
@@ -677,7 +693,7 @@
         </td>
     </tr>
     
-<tr class="b" id="schemeSpecificPart">
+<tr class="a" id="schemeSpecificPart">
         
 <td style="vertical-align: top;">schemeSpecificPart</td>
         
@@ -690,7 +706,7 @@
         </td>
     </tr>
     
-<tr class="a" id="serverDN">
+<tr class="b" id="serverDN">
         
 <td style="vertical-align: top;">serverDN</td>
         
@@ -706,7 +722,7 @@
     </tr>
 
     
-<tr class="b" id="version">
+<tr class="a" id="version">
         
 <td style="vertical-align: top;">version</td>
         
@@ -748,9 +764,15 @@ units are in <b>seconds</b>. Blanks before and after units are allowed. Acceptab
 
 <ul>
     
-<li>&quot;sec.&quot;, &quot;sec&quot;, &quot;s.&quot;, &quot;s&quot; or no units for seconds</li>
+<li>&quot;ms.&quot;, &quot;ms&quot; for milliseconds, e.g. &quot;1000 ms.&quot;</li>
     
-<li>&quot;ms.&quot;, &quot;ms&quot; for milliseconds</li>
+<li>&quot;sec.&quot;, &quot;sec&quot;, &quot;s.&quot;, &quot;s&quot; for seconds, e.g., &quot;300 sec&quot;</li>
+    
+<li>&quot;min.&quot;, &quot;min&quot;, &quot;mins.&quot;, &quot;mins&quot; for minutes, e.g. &quot;20 min.&quot;</li>
+    
+<li>&quot;hr.&quot;, &quot;hr&quot;, &quot;hrs.&quot;, &quot;hrs&quot; for hours, &quot;e.g. 2 hrs.&quot;</li>
+    
+<li>&quot;day&quot;, &quot;days&quot; for days, e.g. &quot;1 day&quot;, &quot;10 days&quot;</li>
 </ul>
 
 </section><section>
