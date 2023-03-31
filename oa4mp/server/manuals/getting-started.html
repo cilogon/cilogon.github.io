@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2023-02-28
+            Last Published: 2023-03-31
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.9.0
+                         Version: 5.3.0
             </div>
     <div class="clear">
         <hr/>
@@ -152,18 +152,14 @@
 
 <ul>
     
-<li>Tomcat 7 or above. This will not work with Tomcat 6 or lower because of internal changes to Java.
-    (In particular, the way JSP is handled.)</li>
+<li>Tomcat 9 or above. This will not work with Tomcat 8 or lower because of internal changes to Java.</li>
     
 <li> SSL should be configured and enabled. Either in Apache (if you are deploying Tomcat as pass through) or
         in Tomcat directly. Note that if you do enable SSL in tomcat, you must un-comment the
         security constraint block in the web.xml deployment descriptor after you deploy the war.
     </li>
     
-<li>Java 1.8. <b>Note:</b> Open JDK is <i>not</i> supported. Only the Oracle/Sun JVM is
-        supported. Note especially that Oracle/Sun Java 1.7 or earlier will not work.
-        This is because of changes to their security APIs.
-    </li>
+<li>Java 1.11. Higher versions of Java (like Java 17) won't work.</li>
     
 <li>Some form of persistent storage. This may be a file system, MySQL or PostgreSQL.</li>
     

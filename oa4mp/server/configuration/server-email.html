@@ -48,7 +48,7 @@
     
         
                     <div class="xleft">
-            Last Published: 2023-02-28
+            Last Published: 2023-03-31
                                 </div>
                 <div class="xright">            
     
@@ -58,7 +58,7 @@
                         
     
         
-                         Version: 5.2.9.0
+                         Version: 5.3.0
             </div>
     <div class="clear">
         <hr/>
@@ -272,6 +272,10 @@
         Drop this jar (typically named mail.jar) into your $CATALINA_HOME/lib
         directory.
     </li>
+    
+<li>Possibly get the <a class="externalLink" href="https://jar-download.com/artifacts/javax.activation/activation">javax.activation</a> framework jar.
+    This might be needed if you are getting errors sending email messages acessing the javax.activation.DataHandler class. Put it into the above Tomcat lib
+    directory.</li>
     
 <li>Add the following line right before the closing tag of the $CATALINA_HOME/conf/context.xml
         file:
